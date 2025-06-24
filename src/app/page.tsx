@@ -39,8 +39,7 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto mt-12 max-w-5xl">
                <div className="overflow-hidden rounded-xl shadow-md">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
                   alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
                   width={1200}
