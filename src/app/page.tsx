@@ -77,7 +77,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-4">
-              <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2 text-left text-muted-foreground">
                 <li>Type your task into the input box.</li>
                 <li>Click "Add" to save it to your list.</li>
                 <li>Click the checkbox to mark it complete.</li>
