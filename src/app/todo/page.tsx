@@ -24,12 +24,12 @@ export default function TodoPage() {
           </div>
           <nav className="flex-1 p-4 space-y-2">
             
-            <Button variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-600 hover:bg-gray-100">
+            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-600 hover:bg-gray-100">
               <LayoutGrid className="w-5 h-5 mr-3" /> Overview
             </Button>
             
             <div>
-              <Button variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-600 hover:bg-gray-100">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-600 hover:bg-gray-100">
                 <Users className="w-5 h-5 mr-3" /> Team Mates
                 <div className="ml-auto">
                   {teamMatesOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -46,7 +46,7 @@ export default function TodoPage() {
             </div>
 
             <div>
-              <Button variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-blue-50 text-blue-700 hover:bg-blue-100">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-blue-50 text-blue-700 hover:bg-blue-100">
                 <ListTodo className="w-5 h-5 mr-3" /> Todo List
                 <div className="ml-auto">
                   {todoListOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -70,7 +70,7 @@ export default function TodoPage() {
         <header className="flex h-20 items-center justify-between border-b border-gray-200 bg-white px-8">
           <h1 className="text-3xl font-bold text-gray-800">Todo List</h1>
           <div className="flex items-center gap-6">
-            <Button variant="ghost" size="icon" className="relative text-gray-600 hover:bg-gray-100">
+            <Button suppressHydrationWarning variant="ghost" size="icon" className="relative text-gray-600 hover:bg-gray-100">
               <Bell className="h-6 w-6" />
               <span className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-blue-500 ring-2 ring-white" />
             </Button>

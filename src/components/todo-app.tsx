@@ -84,7 +84,7 @@ export function TodoApp() {
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="w-full sm:w-64 justify-start text-left font-normal text-gray-600">
+            <Button suppressHydrationWarning variant="outline" className="w-full sm:w-64 justify-start text-left font-normal text-gray-600">
               <CalendarIcon className="mr-2 h-4 w-4" />
               {format(date, "do LLL, yyyy")}
             </Button>
@@ -102,6 +102,7 @@ export function TodoApp() {
         <div className="flex-1 relative min-w-[200px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
           <Input 
+            suppressHydrationWarning
             placeholder="Search List" 
             className="pl-10"
             value={searchQuery}
@@ -109,7 +110,7 @@ export function TodoApp() {
           />
         </div>
 
-        <Button className="bg-blue-600 hover:bg-blue-700">
+        <Button suppressHydrationWarning className="bg-blue-600 hover:bg-blue-700">
           <Plus className="mr-2 h-5 w-5" />
           Add New List
         </Button>
