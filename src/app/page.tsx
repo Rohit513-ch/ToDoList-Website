@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { CheckCircle, ChevronLeft, ChevronRight, FilePlus2, Pencil } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -46,13 +46,13 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       (prevIndex + 1) % galleryImages.length
     );
   };
@@ -61,7 +61,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section 
+        <section
           className="relative w-full py-20 text-center md:py-32 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/30480339/pexels-photo-30480339.jpeg')" }}
         >
@@ -128,15 +128,15 @@ export default function Home() {
                   width={1200}
                   height={675}
                 />
-                <Button 
-                  onClick={handlePrev} 
+                <Button
+                  onClick={handlePrev}
                   variant="ghost"
                   size="icon"
                   className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50 hover:text-white">
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
-                <Button 
-                  onClick={handleNext} 
+                <Button
+                  onClick={handleNext}
                   variant="ghost"
                   size="icon"
                   className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50 hover:text-white">
@@ -147,8 +147,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section 
-          id="features" 
+        <section
+          id="features"
           className="relative w-full py-16 text-center md:py-24 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/18541768/pexels-photo-18541768.jpeg')" }}
         >
@@ -189,27 +189,53 @@ export default function Home() {
         </section>
 
         <section id="how-it-works" className="w-full bg-background py-16 md:py-24">
-          <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
-            <div className="space-y-3">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="space-y-3 text-center">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                A simple guide to get you started in seconds.
+                Getting started with TaskZen is as easy as 1-2-3.
               </p>
             </div>
-            <div className="mx-auto w-full max-w-sm space-y-4">
-              <ol className="list-inside list-decimal space-y-2 text-left text-muted-foreground">
-                <li>Type your task into the input box.</li>
-                <li>Click "Add" to save it to your list.</li>
-                <li>Click the checkbox to mark it complete.</li>
-                <li>Use the edit icon to change a task.</li>
-                <li>Click the delete icon to remove a task.</li>
-              </ol>
+            <div className="relative mt-20">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 top-9 mx-auto hidden h-px w-2/3 border-t-2 border-dashed border-border md:block"
+              />
+              <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                    <FilePlus2 className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">1. Add Your Tasks</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Type your task into the input field and click &apos;Add&apos; to instantly create a new to-do item.
+                  </p>
+                </div>
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                    <Pencil className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">2. Manage Your List</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Need to make a change? Click the pencil to edit, or the trash can to delete a task.
+                  </p>
+                </div>
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                    <CheckCircle className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">3. Track Your Progress</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Click the checkbox to mark tasks as complete and watch your to-do list shrink.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         
-        <section 
-          id="testimonials" 
+        <section
+          id="testimonials"
           className="relative w-full py-16 text-center md:py-24 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/18541767/pexels-photo-18541767.jpeg')" }}
         >
@@ -224,17 +250,17 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto mt-12 grid max-w-full grid-cols-1 gap-8 md:grid-cols-3">
-              <TestimonialCard 
+              <TestimonialCard
                 name="Sarah Johnson"
                 title="Freelance Writer"
                 quote="TaskZen has completely transformed how I manage my deadlines. It's simple, intuitive, and beautiful."
               />
-              <TestimonialCard 
+              <TestimonialCard
                 name="Mike Chen"
                 title="Project Manager"
                 quote="The best to-do app I've ever used. It helps my team stay on track and keeps our projects moving forward."
               />
-              <TestimonialCard 
+              <TestimonialCard
                 name="Jessica Rodriguez"
                 title="Student"
                 quote="As a student, keeping track of assignments is a nightmare. TaskZen makes it easy and even a little fun!"
