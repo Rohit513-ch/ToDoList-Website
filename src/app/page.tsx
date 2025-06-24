@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link"
@@ -209,8 +208,13 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="testimonials" className="w-full bg-gray-900 py-16 text-center md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
+        <section 
+          id="testimonials" 
+          className="relative w-full py-16 text-center md:py-24 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/18541767/pexels-photo-18541767.jpeg')" }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="container relative mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                  <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl font-headline">What Our Users Say</h2>
