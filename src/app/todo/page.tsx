@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { TodoApp } from '@/components/todo-app';
-import { Wind, LayoutGrid, Users, ListTodo, Bell, ChevronDown, ChevronUp } from 'lucide-react';
+import { LayoutGrid, Users, ListTodo, Bell, ChevronDown, ChevronUp } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 
@@ -17,11 +17,9 @@ export default function TodoPage() {
       <aside className="w-72 flex-shrink-0 border-r border-gray-200 bg-white">
         <div className="flex h-full flex-col">
           <div className="flex items-center h-20 px-6 border-b border-gray-200">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Wind className="h-6 w-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold text-gray-800">HealDocs</h1>
+            <Link href="/" className="flex items-center gap-2">
+              <ListTodo className="h-8 w-8 text-primary" />
+              <span className="text-2xl font-bold">TaskZen</span>
             </Link>
           </div>
           <nav className="flex-1 p-4 space-y-2">
