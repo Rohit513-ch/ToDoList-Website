@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-20 md:py-32 bg-card">
+        <section className="w-full bg-card py-20 text-center md:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="features" className="w-full py-16 md:py-24 bg-background">
+        <section id="features" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -69,8 +69,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-16 md:py-24 bg-card text-center">
-          <div className="container mx-auto grid items-center justify-center gap-6 px-4 md:px-6">
+        <section id="how-it-works" className="w-full bg-card py-16 text-center md:py-24">
+          <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -89,53 +89,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="gallery" className="w-full py-16 md:py-24 bg-background">
+        <section id="gallery" className="w-full bg-background py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">See TaskZen in Action</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
-                  Here’s a glimpse of our clean and intuitive interface.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mx-auto mt-12 max-w-5xl">
               <div className="overflow-hidden rounded-xl shadow-md">
                 <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="App Screenshot 1"
-                  width={600}
+                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-e847633e-e6a3-4a6c-92a0-4a81395f4e55.png"
+                  alt="Testimonial from Robin Sharma: Time management is life management."
+                  width={1168}
                   height={400}
-                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
-                  data-ai-hint="app interface"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl shadow-md">
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="App Screenshot 2"
-                  width={600}
-                  height={400}
-                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
-                  data-ai-hint="task list"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl shadow-md">
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="App Screenshot 3"
-                  width={600}
-                  height={400}
-                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
-                  data-ai-hint="productivity dashboard"
+                  className="w-full object-cover"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="about" className="w-full py-16 md:py-24 bg-card text-center">
-          <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6">
+        <section id="about" className="w-full bg-card py-16 text-center md:py-24">
+          <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
