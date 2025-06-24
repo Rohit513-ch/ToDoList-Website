@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 text-center">
         <section className="w-full py-20 md:py-32 bg-card">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/tight font-headline">
@@ -33,7 +33,7 @@ export default function Home() {
         </section>
         
         <section id="features" className="w-full py-16 md:py-24">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Key Features</div>
@@ -69,7 +69,7 @@ export default function Home() {
         </section>
 
         <section id="how-it-works" className="w-full py-16 md:py-24 bg-card">
-          <div className="container grid items-center justify-center gap-6 px-4 md:px-6">
+          <div className="container mx-auto grid items-center justify-center gap-6 px-4 md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -89,7 +89,7 @@ export default function Home() {
         </section>
 
         <section id="about" className="w-full py-16 md:py-24">
-          <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
+          <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
