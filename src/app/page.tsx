@@ -105,7 +105,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="w-full py-20 md:py-32 bg-background">
+        <section className="w-full py-24 md:py-40 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">App Showcase</h2>
@@ -114,7 +114,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-8">
-              <div className="w-full max-w-4xl relative group">
+              <div className="w-full max-w-6xl relative group">
                 <Image
                   key={currentImageIndex}
                   alt={galleryImages[currentImageIndex].alt}
