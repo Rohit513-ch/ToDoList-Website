@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Image from "next/image"
 import { CheckCircle, Zap } from "lucide-react"
@@ -34,7 +35,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="w-full bg-background py-16 text-center md:py-24">
+        <section id="gallery" className="w-full bg-background py-16 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto mt-12 max-w-5xl">
+               <div className="overflow-hidden rounded-xl shadow-md">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
+                  alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
+                  width={1200}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id="features" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -70,7 +88,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full bg-card py-16 md:py-24">
+        <section id="how-it-works" className="w-full bg-background py-16 md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -90,23 +108,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="gallery" className="w-full bg-background py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto mt-12 max-w-5xl">
-               <div className="overflow-hidden rounded-xl shadow-md">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
-                  alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
-                  width={1200}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <section id="testimonials" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
