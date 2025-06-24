@@ -217,11 +217,6 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
   const [editedTitle, setEditedTitle] = useState(task.title);
   const [editedDescription, setEditedDescription] = useState(task.description);
 
-  useEffect(() => {
-    setEditedTitle(task.title);
-    setEditedDescription(task.description);
-  }, [task]);
-
   const handleSave = () => {
     onUpdateTask({ ...task, title: editedTitle, description: editedDescription });
   };
