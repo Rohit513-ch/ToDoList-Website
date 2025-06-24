@@ -10,14 +10,14 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-card">
+        <section className="w-full py-20 md:py-28 bg-card">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none font-headline">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/tight font-headline">
                   Stay Organized. Get Things Done.
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
                   A simple and smart to-do list app to boost your productivity.
                 </p>
               </div>
@@ -32,34 +32,34 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="features" className="w-full py-16 md:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Key Features</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Everything You Need to Be Productive</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Everything You Need to Be Productive</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
                   TaskZen is designed to be powerful yet simple. No sign-up required — just start!
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-16 mt-12">
-              <div className="flex flex-col items-center text-center gap-2">
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
+              <div className="flex flex-col items-center text-center gap-4">
                 <CheckCircle className="h-8 w-8 text-primary" />
                 <h3 className="text-lg font-bold">Add, edit, and delete tasks</h3>
                 <p className="text-sm text-muted-foreground">Easily manage your tasks with intuitive controls.</p>
               </div>
-              <div className="flex flex-col items-center text-center gap-2">
+              <div className="flex flex-col items-center text-center gap-4">
                 <CheckCircle className="h-8 w-8 text-primary" />
                 <h3 className="text-lg font-bold">Mark tasks complete</h3>
                 <p className="text-sm text-muted-foreground">Keep track of your progress with a simple click.</p>
               </div>
-              <div className="flex flex-col items-center text-center gap-2">
+              <div className="flex flex-col items-center text-center gap-4">
                 <CheckCircle className="h-8 w-8 text-primary" />
                 <h3 className="text-lg font-bold">Local Storage Persistence</h3>
                 <p className="text-sm text-muted-foreground">Your tasks are saved in your browser, so you never lose them.</p>
               </div>
-              <div className="flex flex-col items-center text-center gap-2 lg:col-start-2">
+              <div className="flex flex-col items-center text-center gap-4 lg:col-start-2">
                 <CheckCircle className="h-8 w-8 text-primary" />
                 <h3 className="text-lg font-bold">Mobile-Friendly</h3>
                 <p className="text-sm text-muted-foreground">Manage your tasks on the go with a fully responsive design.</p>
@@ -68,11 +68,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="how-it-works" className="w-full py-16 md:py-24 bg-card">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
                 A simple guide to get you started in seconds.
               </p>
             </div>
@@ -88,11 +88,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="about" className="w-full py-16 md:py-24">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
                 This app was built using Next.js, TypeScript, and Tailwind CSS. It aims to improve productivity while helping learners understand core front-end concepts.
               </p>
             </div>

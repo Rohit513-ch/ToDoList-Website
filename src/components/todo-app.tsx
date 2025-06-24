@@ -123,7 +123,7 @@ export function TodoApp() {
         <div className="space-y-3">
           {isClient && tasks.length > 0 ? (
             tasks.map(task => (
-              <div key={task.id} className="flex items-center gap-3 p-3 rounded-md transition-all duration-300 bg-secondary/50 hover:bg-secondary">
+              <div key={task.id} className="flex items-center gap-4 p-4 rounded-md transition-all duration-300 bg-secondary/50 hover:bg-secondary">
                 {editingTaskId === task.id ? (
                   <>
                     <Input 
@@ -134,10 +134,10 @@ export function TodoApp() {
                       autoFocus
                       onKeyDown={(e) => e.key === 'Enter' && handleSaveEdit(task.id)}
                     />
-                    <Button size="icon" variant="ghost" className="text-green-600 hover:text-green-700 hover:bg-green-100" onClick={() => handleSaveEdit(task.id)}>
+                    <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-primary" onClick={() => handleSaveEdit(task.id)}>
                       <Save className="h-4 w-4" />
                     </Button>
-                    <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-destructive hover:bg-red-100" onClick={handleCancelEdit}>
+                    <Button size="icon" variant="ghost" className="text-muted-foreground hover:text-destructive" onClick={handleCancelEdit}>
                       <X className="h-4 w-4" />
                     </Button>
                   </>
@@ -173,7 +173,7 @@ export function TodoApp() {
         </div>
       </CardContent>
       {isClient && tasks.length > 0 && (
-         <CardFooter className="text-sm text-muted-foreground justify-center">
+         <CardFooter className="text-sm text-muted-foreground justify-center border-t pt-6">
           <p>{completedCount} of {tasks.length} tasks completed.</p>
         </CardFooter>
       )}
