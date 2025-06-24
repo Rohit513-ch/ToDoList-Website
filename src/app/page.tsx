@@ -61,14 +61,18 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="w-full bg-card py-20 text-center md:py-32">
-          <div className="container mx-auto px-4 md:px-6">
+        <section 
+          className="relative w-full py-20 text-center md:py-32 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/30480339/pexels-photo-30480339.jpeg')" }}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="container relative mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/tight font-headline">
+                <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl/tight font-headline">
                   Stay Organized. Get Things Done.
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+                <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl/relaxed">
                   A simple and smart to-do list app to boost your productivity.
                 </p>
               </div>
