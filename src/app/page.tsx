@@ -61,11 +61,11 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <Image
               alt="Task Management App Screenshot"
-              className="mx-auto aspect-[2/1] overflow-hidden rounded-xl object-cover object-center sm:w-full shadow-lg"
+              className="mx-auto overflow-hidden rounded-xl object-contain object-center sm:w-full shadow-lg"
               src="https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-2048x853.webp"
               data-ai-hint="task management"
               width={1200}
-              height={600}
+              height={500}
             />
           </div>
         </section>
