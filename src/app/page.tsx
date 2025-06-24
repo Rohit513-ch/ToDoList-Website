@@ -59,14 +59,40 @@ export default function Home() {
         
         <section className="w-full py-20 md:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
-            <Image
-              alt="Task Management App Screenshot"
-              className="mx-auto overflow-hidden rounded-xl object-contain object-center sm:w-full shadow-lg"
-              src="https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-2048x853.webp"
-              data-ai-hint="task management"
-              width={1200}
-              height={500}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <Image
+                alt="Task Management App Screenshot 1"
+                className="w-full h-auto rounded-xl shadow-lg"
+                src="https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-2048x853.webp"
+                data-ai-hint="task management"
+                width={1200}
+                height={500}
+              />
+              <Image
+                alt="Task Management App Screenshot 2"
+                className="w-full h-auto rounded-xl shadow-lg"
+                src="https://clockdiary.com/wp-content/uploads/2024/09/image-2-1536x639-7.webp"
+                data-ai-hint="app interface"
+                width={1200}
+                height={500}
+              />
+              <Image
+                alt="Task Management App Screenshot 3"
+                className="w-full h-auto rounded-xl shadow-lg"
+                src="https://clockdiary.com/wp-content/uploads/2024/09/image-1-1536x639-1.webp"
+                data-ai-hint="task list"
+                width={1200}
+                height={500}
+              />
+              <Image
+                alt="Task Management App Screenshot 4"
+                className="w-full h-auto rounded-xl shadow-lg"
+                src="https://clockdiary.com/wp-content/uploads/2024/09/MicrosoftTeams-image-1-1024x427-1.webp"
+                data-ai-hint="feature showcase"
+                width={1200}
+                height={500}
+              />
+            </div>
           </div>
         </section>
 
