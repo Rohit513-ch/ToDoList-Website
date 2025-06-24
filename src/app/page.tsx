@@ -69,6 +69,26 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="how-it-works" className="w-full py-16 md:py-24 bg-background text-center">
+          <div className="container mx-auto grid items-center justify-center gap-6 px-4 md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+                A simple guide to get you started in seconds.
+              </p>
+            </div>
+            <div className="mx-auto w-full max-w-sm space-y-4">
+              <ol className="list-inside list-decimal space-y-2 text-left text-muted-foreground">
+                <li>Type your task into the input box.</li>
+                <li>Click "Add" to save it to your list.</li>
+                <li>Click the checkbox to mark it complete.</li>
+                <li>Use the edit icon to change a task.</li>
+                <li>Click the delete icon to remove a task.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
         <section className="w-full py-16 md:py-24 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-secondary shadow-xl">
@@ -83,18 +103,15 @@ export default function Home() {
                   </blockquote>
                   <div className="flex items-center gap-4">
                     <svg
-                      width="44"
-                      height="34"
-                      viewBox="0 0 44 34"
+                      width="24"
+                      height="18"
+                      viewBox="0 0 24 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-auto text-primary/20"
+                      className="h-5 w-auto text-primary/20"
                       aria-hidden="true"
                     >
-                      <path
-                        d="M0 34V16.3478H10.8525V0H26.3333V34H0ZM17.6667 34V16.3478H28.525V0H44V34H17.6667Z"
-                        fill="currentColor"
-                      />
+                      <rect width="24" height="18" fill="currentColor" />
                     </svg>
                     <p className="text-lg font-semibold text-foreground">Peter Drucker</p>
                   </div>
@@ -114,41 +131,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-16 md:py-24 bg-background">
-          <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                A simple guide to get you started in seconds.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-4 text-center">
-              <ol className="list-inside list-decimal space-y-2 text-left text-muted-foreground">
-                <li>Type your task into the input box.</li>
-                <li>Click "Add" to save it to your list.</li>
-                <li>Click the checkbox to mark it complete.</li>
-                <li>Use the edit icon to change a task.</li>
-                <li>Click the delete icon to remove a task.</li>
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 md:py-24 bg-card">
-          <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <Image
-              alt="Productivity"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-              height="450"
-              src="https://placehold.co/900x450.png"
-              width="900"
-              data-ai-hint="desk workspace"
-            />
-          </div>
-        </section>
-
-        <section id="about" className="w-full py-16 md:py-24 bg-background">
-          <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <section id="about" className="w-full py-16 md:py-24 bg-background text-center">
+          <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
