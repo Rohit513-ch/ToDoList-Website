@@ -1,9 +1,11 @@
 import Link from "next/link"
-import { ListTodo, CheckCircle, Zap } from "lucide-react"
+import Image from "next/image"
+import { CheckCircle, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { TestimonialCard } from "@/components/testimonial-card"
 
 export default function Home() {
   return (
@@ -91,21 +93,48 @@ export default function Home() {
         <section id="gallery" className="w-full bg-background py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto mt-12 max-w-5xl">
-              <div className="overflow-hidden rounded-xl shadow-md">
+               <div className="overflow-hidden rounded-xl shadow-md">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
                   alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
-                  width={800}
-                  height={320}
-                  className="w-full h-auto"
+                  width={1200}
+                  height={400}
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>
           </div>
         </section>
+        
+        <section id="testimonials" className="w-full bg-card py-16 text-center md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">What Our Users Say</h2>
+                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                    Hear from the people who use TaskZen every day.
+                 </p>
+              </div>
+            </div>
+            <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <TestimonialCard 
+                name="Sarah Johnson"
+                title="Freelance Writer"
+              />
+              <TestimonialCard 
+                name="Mike Chen"
+                title="Project Manager"
+              />
+              <TestimonialCard 
+                name="Jessica Rodriguez"
+                title="Student"
+              />
+            </div>
+          </div>
+        </section>
 
-        <section id="about" className="w-full bg-card py-16 text-center md:py-24">
+        <section id="about" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
