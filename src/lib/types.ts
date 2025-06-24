@@ -1,5 +1,8 @@
 export interface Task {
   id: string;
-  text: string;
+  title: string;
+  description: string;
+  time: string;
   completed: boolean;
+  color: string;
 }
