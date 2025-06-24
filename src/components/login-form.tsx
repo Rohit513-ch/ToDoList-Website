@@ -1,21 +1,50 @@
 "use client";
 
+import { useState, FormEvent } from 'react';
 import { useAuth } from '@/context/auth-context';
 
 export function LoginForm() {
-  const { signInWithGoogle, loading } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { signInWithGoogle, signInWithEmail, loading } = useAuth();
+
+  const handleLogin = (e: FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      return;
+    }
+    signInWithEmail(email, password);
+  };
 
   return (
     <div className="form-container">
       <p className="title">Welcome back</p>
-      <div className="form">
-        <input type="email" className="input" placeholder="Email" disabled={loading} />
-        <input type="password" className="input" placeholder="Password" disabled={loading} />
+      <form className="form" onSubmit={handleLogin}>
+        <input 
+          type="email" 
+          className="input" 
+          placeholder="Email" 
+          disabled={loading}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input 
+          type="password" 
+          className="input" 
+          placeholder="Password" 
+          disabled={loading}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <p className="page-link">
           <span className="page-link-label">Forgot Password?</span>
         </p>
-        <button className="form-btn" disabled={loading}>Log in</button>
-      </div>
+        <button type="submit" className="form-btn" disabled={loading}>
+          {loading ? 'Logging in...' : 'Log in'}
+        </button>
+      </form>
       <p className="sign-up-label">
         Don't have an account?<span className="sign-up-link">Sign up</span>
       </p>
