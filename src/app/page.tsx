@@ -147,13 +147,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="w-full bg-card py-16 text-center md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
+        <section 
+          id="features" 
+          className="relative w-full py-16 text-center md:py-24 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/18541768/pexels-photo-18541768.jpeg')" }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="container relative mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Key Features</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Everything You Need to Be Productive</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                <div className="inline-block rounded-lg bg-white/20 px-3 py-1 text-sm text-white">Key Features</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-white">Everything You Need to Be Productive</h2>
+                <p className="max-w-[900px] text-gray-200 md:text-xl/relaxed">
                   TaskZen is designed to be powerful yet simple. No sign-up required — just start!
                 </p>
               </div>
@@ -161,23 +166,23 @@ export default function Home() {
             <div className="mx-auto mt-12 grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
               <div className="flex flex-col items-center gap-4 text-center">
                 <CheckCircle className="h-8 w-8 text-primary" />
-                <h3 className="text-lg font-bold">Add, edit, and delete tasks</h3>
-                <p className="text-sm text-muted-foreground">Easily manage your tasks with intuitive controls.</p>
+                <h3 className="text-lg font-bold text-white">Add, edit, and delete tasks</h3>
+                <p className="text-sm text-gray-200">Easily manage your tasks with intuitive controls.</p>
               </div>
               <div className="flex flex-col items-center gap-4 text-center">
                 <CheckCircle className="h-8 w-8 text-primary" />
-                <h3 className="text-lg font-bold">Mark tasks complete</h3>
-                <p className="text-sm text-muted-foreground">Keep track of your progress with a simple click.</p>
+                <h3 className="text-lg font-bold text-white">Mark tasks complete</h3>
+                <p className="text-sm text-gray-200">Keep track of your progress with a simple click.</p>
               </div>
               <div className="flex flex-col items-center gap-4 text-center">
                 <CheckCircle className="h-8 w-8 text-primary" />
-                <h3 className="text-lg font-bold">Local Storage Persistence</h3>
-                <p className="text-sm text-muted-foreground">Your tasks are saved in your browser, so you never lose them.</p>
+                <h3 className="text-lg font-bold text-white">Local Storage Persistence</h3>
+                <p className="text-sm text-gray-200">Your tasks are saved in your browser, so you never lose them.</p>
               </div>
               <div className="flex flex-col items-center gap-4 text-center lg:col-start-2">
                 <CheckCircle className="h-8 w-8 text-primary" />
-                <h3 className="text-lg font-bold">Mobile-Friendly</h3>
-                <p className="text-sm text-muted-foreground">Manage your tasks on the go with a fully responsive design.</p>
+                <h3 className="text-lg font-bold text-white">Mobile-Friendly</h3>
+                <p className="text-sm text-gray-200">Manage your tasks on the go with a fully responsive design.</p>
               </div>
             </div>
           </div>
