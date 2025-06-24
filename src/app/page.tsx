@@ -118,7 +118,7 @@ export default function Home() {
                 <Image
                   key={currentImageIndex}
                   alt={galleryImages[currentImageIndex].alt}
-                  className="w-full h-auto rounded-xl shadow-lg object-contain transition-all duration-300 ease-in-out animate-in fade-in"
+                  className="w-full h-auto rounded-xl shadow-lg object-contain"
                   src={galleryImages[currentImageIndex].src}
                   data-ai-hint={galleryImages[currentImageIndex]['data-ai-hint']}
                   width={1200}
