@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-16 md:py-24 bg-background text-center">
+        <section id="how-it-works" className="w-full py-16 md:py-24 bg-card text-center">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -89,49 +89,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-card">
+        <section id="gallery" className="w-full py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-secondary shadow-xl">
-              <div className="grid md:grid-cols-3">
-                <div className="space-y-8 p-8 md:col-span-2 md:p-12">
-                  <div className="flex items-center gap-2 text-2xl font-bold text-foreground">
-                    <ListTodo className="h-8 w-8 text-primary" />
-                    <span>TaskZen</span>
-                  </div>
-                  <blockquote className="text-2xl font-medium text-foreground/90 md:text-3xl">
-                    "Time is the scarcest resource, and unless it is managed, nothing else can be managed."
-                  </blockquote>
-                  <div className="flex items-center gap-4">
-                    <svg
-                      width="24"
-                      height="18"
-                      viewBox="0 0 24 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-auto text-primary/20"
-                      aria-hidden="true"
-                    >
-                      <rect width="24" height="18" fill="currentColor" />
-                    </svg>
-                    <p className="text-lg font-semibold text-foreground">Peter Drucker</p>
-                  </div>
-                </div>
-                <div className="relative flex items-center justify-center rounded-l-[5rem] bg-card p-8 md:col-span-1 md:rounded-l-full">
-                  <Image
-                    src="https://placehold.co/300x300.png"
-                    alt="Peter Drucker"
-                    width={200}
-                    height={200}
-                    className="h-40 w-40 rounded-full border-4 border-background object-cover md:h-48 md:w-48 lg:h-56 lg:w-56"
-                    data-ai-hint="man portrait"
-                  />
-                </div>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">See TaskZen in Action</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  Here’s a glimpse of our clean and intuitive interface.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 md:grid-cols-3">
+              <div className="overflow-hidden rounded-xl shadow-md">
+                <Image
+                  src="https://placehold.co/600x400.png"
+                  alt="App Screenshot 1"
+                  width={600}
+                  height={400}
+                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+                  data-ai-hint="app interface"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl shadow-md">
+                <Image
+                  src="https://placehold.co/600x400.png"
+                  alt="App Screenshot 2"
+                  width={600}
+                  height={400}
+                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+                  data-ai-hint="task list"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl shadow-md">
+                <Image
+                  src="https://placehold.co/600x400.png"
+                  alt="App Screenshot 3"
+                  width={600}
+                  height={400}
+                  className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+                  data-ai-hint="productivity dashboard"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="about" className="w-full py-16 md:py-24 bg-background text-center">
+        <section id="about" className="w-full py-16 md:py-24 bg-card text-center">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
