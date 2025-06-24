@@ -188,11 +188,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full bg-background py-16 md:py-24">
+        <section id="how-it-works" className="w-full bg-[#FAFFAF] py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="space-y-3 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+              <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 md:text-4xl/tight font-headline">How It Works</h2>
+              <p className="mx-auto max-w-[700px] text-zinc-700 md:text-xl/relaxed">
                 Getting started with TaskZen is as easy as 1-2-3.
               </p>
             </div>
@@ -203,29 +203,29 @@ export default function Home() {
               />
               <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-white/50 p-4 shadow-lg ring-1 ring-border">
                     <FilePlus2 className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">1. Add Your Tasks</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold mb-2 text-zinc-900">1. Add Your Tasks</h3>
+                  <p className="text-zinc-700 text-sm">
                     Type your task into the input field and click &apos;Add&apos; to instantly create a new to-do item.
                   </p>
                 </div>
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-white/50 p-4 shadow-lg ring-1 ring-border">
                     <Pencil className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">2. Manage Your List</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold mb-2 text-zinc-900">2. Manage Your List</h3>
+                  <p className="text-zinc-700 text-sm">
                     Need to make a change? Click the pencil to edit, or the trash can to delete a task.
                   </p>
                 </div>
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-background p-4 shadow-lg ring-1 ring-border">
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-lg bg-white/50 p-4 shadow-lg ring-1 ring-border">
                     <CheckCircle className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">3. Track Your Progress</h3>
-                  <p className="text-muted-foreground text-sm">
+                  <h3 className="text-xl font-bold mb-2 text-zinc-900">3. Track Your Progress</h3>
+                  <p className="text-zinc-700 text-sm">
                     Click the checkbox to mark tasks as complete and watch your to-do list shrink.
                   </p>
                 </div>
