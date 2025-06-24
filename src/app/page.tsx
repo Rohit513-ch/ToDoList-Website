@@ -32,6 +32,16 @@ export default function Home() {
       src: "https://clockdiary.com/wp-content/uploads/2024/09/MicrosoftTeams-image-1-1024x427-1.webp",
       alt: "Task Management App Screenshot 4",
       "data-ai-hint": "feature showcase"
+    },
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-7-2048x853.webp",
+      alt: "Task Management App Screenshot 5",
+      "data-ai-hint": "app dashboard"
+    },
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-10-2048x853.webp",
+      alt: "Task Management App Screenshot 6",
+      "data-ai-hint": "task details"
     }
   ];
   const [mainImage, setMainImage] = useState(galleryImages[0]);
