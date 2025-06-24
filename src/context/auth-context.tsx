@@ -37,7 +37,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signInWithGoogle = async () => {
     if (!auth) {
-      console.error("Firebase is not configured. Please check your .env.local file.");
       toast({
         variant: "destructive",
         title: "Configuration Error",
