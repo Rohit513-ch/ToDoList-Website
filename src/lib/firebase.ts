@@ -10,19 +10,14 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-let app: FirebaseApp | null = null;
-let auth: Auth | null = null;
+let app: FirebaseApp | undefined;
+let auth: Auth | undefined;
 
+// This condition prevents the app from crashing on the server
+// if the environment variables are not set.
 if (firebaseConfig.apiKey) {
-    try {
-        app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-        auth = getAuth(app);
-    } catch (e) {
-        console.error('Failed to initialize Firebase', e)
-    }
-} else {
-    console.warn("Firebase API key is missing. Auth will be disabled.")
+  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+  auth = getAuth(app);
 }
-
 
 export { app, auth };

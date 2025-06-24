@@ -12,7 +12,6 @@ interface AuthContextType {
   loading: boolean;
   signInWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
-  authAvailable: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -22,27 +21,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { toast } = useToast();
-  const authAvailable = !!auth;
 
   useEffect(() => {
-    if (!auth) {
-      setLoading(false);
-      return;
-    }
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
-    });
+    if (auth) {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        setUser(user);
+        setLoading(false);
+      });
 
-    return () => unsubscribe();
+      return () => unsubscribe();
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   const signInWithGoogle = async () => {
     if (!auth) {
+      console.error("Firebase is not configured. Please check your .env.local file.");
       toast({
         variant: "destructive",
         title: "Configuration Error",
-        description: "Firebase credentials are not configured correctly.",
+        description: "Firebase authentication is not configured. Please add your credentials to a .env.local file.",
       });
       return;
     }
@@ -77,7 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const value = { user, loading, signInWithGoogle, logout, authAvailable };
+  const value = { user, loading, signInWithGoogle, logout };
 
   return (
     <AuthContext.Provider value={value}>
