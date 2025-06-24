@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link"
@@ -208,12 +209,12 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="testimonials" className="w-full bg-card py-16 text-center md:py-24">
+        <section id="testimonials" className="w-full bg-gray-900 py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">What Our Users Say</h2>
-                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                 <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl font-headline">What Our Users Say</h2>
+                 <p className="max-w-[900px] text-gray-200 md:text-xl/relaxed">
                     Hear from the people who use TaskZen every day.
                  </p>
               </div>
