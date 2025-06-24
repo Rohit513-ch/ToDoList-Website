@@ -77,7 +77,7 @@ export default function TodoPage() {
               <span className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-blue-500 ring-2 ring-white" />
             </Button>
             <Avatar className="h-12 w-12">
-              <AvatarImage src="https://i.ibb.co/6P8Kk2B/profile.png" alt="User Avatar" />
+              <AvatarImage src="https://placehold.co/48x48.png" alt="User Avatar" data-ai-hint="profile picture" />
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
           </div>
