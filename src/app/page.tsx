@@ -10,11 +10,11 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-20 md:py-28 bg-card">
+        <section className="w-full py-20 md:py-32 bg-card">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/tight font-headline">
+              <div className="space-y-4">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/tight font-headline">
                   Stay Organized. Get Things Done.
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -69,7 +69,7 @@ export default function Home() {
         </section>
 
         <section id="how-it-works" className="w-full py-16 md:py-24 bg-card">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <div className="container grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -77,7 +77,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-4">
-              <ol className="list-decimal list-inside text-left space-y-2 text-muted-foreground">
+              <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
                 <li>Type your task into the input box.</li>
                 <li>Click "Add" to save it to your list.</li>
                 <li>Click the checkbox to mark it complete.</li>
