@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ListTodo, CheckCircle, Zap } from "lucide-react"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -68,7 +69,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full bg-card py-16 text-center md:py-24">
+        <section id="how-it-works" className="w-full bg-card py-16 md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -92,13 +93,12 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto mt-12 max-w-5xl">
               <div className="overflow-hidden rounded-xl shadow-md">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-e847633e-e6a3-4a6c-92a0-4a81395f4e55.png"
                   alt="Testimonial from Robin Sharma: Time management is life management."
                   width={1168}
                   height={400}
-                  className="w-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
