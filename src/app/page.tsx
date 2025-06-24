@@ -248,7 +248,7 @@ export default function Home() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                This app was built using Next.js, TypeScript, and Tailwind CSS. It aims to improve productivity while helping learners understand core front-end concepts.
+                The To-Do List App is a simple yet powerful productivity tool designed to help users stay organized and focused. It allows you to jot down daily tasks, prioritize important activities, and keep track of what’s done and what’s pending — all in one place. Whether you're managing homework, personal goals, or work projects, this app ensures you don’t miss a thing. With features like task editing, deletion, completion tracking, and automatic saving through local storage, it's perfect for improving time management and reducing mental clutter.
               </p>
             </div>
           </div>
