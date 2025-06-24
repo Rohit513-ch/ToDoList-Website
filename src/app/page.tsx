@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CheckCircle, Zap } from "lucide-react"
+import { ListTodo, CheckCircle, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="features" className="w-full py-16 md:py-24">
+        <section id="features" className="w-full py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -71,18 +71,50 @@ export default function Home() {
 
         <section className="w-full py-16 md:py-24 bg-card">
           <div className="container mx-auto px-4 md:px-6">
-            <Image
-              alt="Productivity"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-              height="450"
-              src="https://placehold.co/900x450.png"
-              width="900"
-              data-ai-hint="desk workspace"
-            />
+            <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-secondary shadow-xl">
+              <div className="grid md:grid-cols-3">
+                <div className="space-y-8 p-8 md:col-span-2 md:p-12">
+                  <div className="flex items-center gap-2 text-2xl font-bold text-foreground">
+                    <ListTodo className="h-8 w-8 text-primary" />
+                    <span>TaskZen</span>
+                  </div>
+                  <blockquote className="text-2xl font-medium text-foreground/90 md:text-3xl">
+                    "Time is the scarcest resource, and unless it is managed, nothing else can be managed."
+                  </blockquote>
+                  <div className="flex items-center gap-4">
+                    <svg
+                      width="44"
+                      height="34"
+                      viewBox="0 0 44 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-auto text-primary/20"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M0 34V16.3478H10.8525V0H26.3333V34H0ZM17.6667 34V16.3478H28.525V0H44V34H17.6667Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <p className="text-lg font-semibold text-foreground">Peter Drucker</p>
+                  </div>
+                </div>
+                <div className="relative flex items-center justify-center rounded-l-[5rem] bg-card p-8 md:col-span-1 md:rounded-l-full">
+                  <Image
+                    src="https://placehold.co/300x300.png"
+                    alt="Peter Drucker"
+                    width={200}
+                    height={200}
+                    className="h-40 w-40 rounded-full border-4 border-background object-cover md:h-48 md:w-48 lg:h-56 lg:w-56"
+                    data-ai-hint="man portrait"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full py-16 md:py-24">
+        <section id="how-it-works" className="w-full py-16 md:py-24 bg-background">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -90,7 +122,7 @@ export default function Home() {
                 A simple guide to get you started in seconds.
               </p>
             </div>
-            <div className="mx-auto w-full max-w-sm space-y-4">
+            <div className="mx-auto w-full max-w-sm space-y-4 text-center">
               <ol className="list-inside list-decimal space-y-2 text-left text-muted-foreground">
                 <li>Type your task into the input box.</li>
                 <li>Click "Add" to save it to your list.</li>
@@ -102,7 +134,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-16 md:py-24 bg-card">
+        <section className="w-full py-16 md:py-24 bg-card">
+          <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <Image
+              alt="Productivity"
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
+              height="450"
+              src="https://placehold.co/900x450.png"
+              width="900"
+              data-ai-hint="desk workspace"
+            />
+          </div>
+        </section>
+
+        <section id="about" className="w-full py-16 md:py-24 bg-background">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
