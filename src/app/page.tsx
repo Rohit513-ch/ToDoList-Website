@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ListTodo, CheckCircle, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -93,7 +92,8 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto mt-12 max-w-5xl">
               <div className="overflow-hidden rounded-xl shadow-md">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-e847633e-e6a3-4a6c-92a0-4a81395f4e55.png"
                   alt="Testimonial from Robin Sharma: Time management is life management."
                   width={1168}
