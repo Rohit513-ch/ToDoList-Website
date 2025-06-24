@@ -1,10 +1,9 @@
-
 "use client";
 
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { CheckCircle, Zap } from "lucide-react"
+import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -44,7 +43,19 @@ export default function Home() {
       "data-ai-hint": "task details"
     }
   ];
-  const [mainImage, setMainImage] = useState(galleryImages[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex + 1) % galleryImages.length
+    );
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -99,37 +110,34 @@ export default function Home() {
             <div className="space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">App Showcase</h2>
               <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed">
-                Take a closer look at TaskZen&apos;s interface and features. Click a thumbnail to enlarge.
+                Take a closer look at TaskZen&apos;s interface and features. Click the arrows to navigate.
               </p>
             </div>
             <div className="flex flex-col items-center gap-8">
-              <div className="w-full max-w-4xl">
+              <div className="w-full max-w-4xl relative group">
                 <Image
-                  alt={mainImage.alt}
-                  className="w-full h-auto rounded-xl shadow-lg object-contain"
-                  src={mainImage.src}
-                  data-ai-hint={mainImage['data-ai-hint']}
+                  key={currentImageIndex}
+                  alt={galleryImages[currentImageIndex].alt}
+                  className="w-full h-auto rounded-xl shadow-lg object-contain transition-all duration-300 ease-in-out animate-in fade-in"
+                  src={galleryImages[currentImageIndex].src}
+                  data-ai-hint={galleryImages[currentImageIndex]['data-ai-hint']}
                   width={1200}
                   height={675}
                 />
-              </div>
-              <div className="flex gap-4 w-full max-w-4xl overflow-x-auto pb-4">
-                {galleryImages.map((image, index) => (
-                  <div
-                    key={index}
-                    onClick={() => setMainImage(image)}
-                    className={`cursor-pointer rounded-xl transition-all duration-200 flex-shrink-0 w-72 ${mainImage.src === image.src ? 'ring-2 ring-primary ring-offset-2' : 'hover:opacity-80'}`}
-                  >
-                    <Image
-                      alt={image.alt}
-                      className="w-full h-auto rounded-lg object-cover aspect-video"
-                      src={image.src}
-                      data-ai-hint={image['data-ai-hint']}
-                      width={300}
-                      height={169}
-                    />
-                  </div>
-                ))}
+                <Button 
+                  onClick={handlePrev} 
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50 hover:text-white">
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button 
+                  onClick={handleNext} 
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50 hover:text-white">
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
               </div>
             </div>
           </div>
