@@ -24,18 +24,40 @@ export default function Home() {
                   A simple and smart to-do list app to boost your productivity.
                 </p>
               </div>
-              <div className="space-x-4">
-                <Button asChild size="lg">
-                  <Link href="/login">
-                    <Zap className="mr-2 h-5 w-5" /> Start Managing Tasks
-                  </Link>
-                </Button>
+              <div className="relative mt-4 inline-flex items-center justify-center gap-4 group">
+                <div
+                  className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                ></div>
+                <Link
+                  href="/login"
+                  className="group relative inline-flex items-center justify-center text-base rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                  title="Get Started"
+                  >
+                  Get Started For Free
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 10 10"
+                    height="10"
+                    width="10"
+                    fill="none"
+                    className="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+                  >
+                    <path
+                      d="M0 5h7"
+                      className="transition opacity-0 group-hover:opacity-100"
+                    ></path>
+                    <path
+                      d="M1 1l4 4-4 4"
+                      className="transition group-hover:translate-x-[3px]"
+                    ></path>
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
         </section>
         
-        <section id="features" className="w-full bg-card py-16 text-center md:py-24">
+        <section id="features" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -71,7 +93,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full bg-background py-16 md:py-24">
+        <section id="how-it-works" className="w-full bg-card py-16 md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -90,8 +112,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section id="testimonials" className="w-full bg-card py-16 text-center md:py-24">
+        
+        <section id="testimonials" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -101,7 +123,7 @@ export default function Home() {
                  </p>
               </div>
             </div>
-            <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
+            <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start md:flex-wrap">
               <TestimonialCard 
                 name="Sarah Johnson"
                 title="Freelance Writer"
@@ -118,7 +140,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full bg-background py-16 text-center md:py-24">
+        <section id="about" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
