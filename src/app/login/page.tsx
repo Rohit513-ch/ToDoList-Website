@@ -1,11 +1,4 @@
-import { LoginForm } from "@/components/login-form"
-
+// This page is no longer in use since authentication has been removed.
 export default function LoginPage() {
-  return (
-    <div
-      className="flex min-h-screen flex-col items-center justify-center bg-background p-4"
-    >
-      <LoginForm />
-    </div>
-  )
+  return null;
 }
