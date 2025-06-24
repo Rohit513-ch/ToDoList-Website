@@ -38,11 +38,11 @@ export default function Home() {
         <section className="w-full bg-background py-12 md:py-16">
           <div className="container mx-auto px-4 md:px-6">
             <Image
-              src="https://placehold.co/828x315.png"
-              alt="App screenshot placeholder"
+              src="https://i.ibb.co/Rj5hB1N/image.png"
+              alt="TaskZen application screenshot"
               data-ai-hint="app screenshot"
-              width={828}
-              height={315}
+              width={1349}
+              height={363}
               className="mx-auto rounded-xl object-cover"
             />
           </div>
