@@ -94,10 +94,10 @@ export default function Home() {
             <div className="mx-auto mt-12 max-w-5xl">
               <div className="overflow-hidden rounded-xl shadow-md">
                 <Image
-                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-e847633e-e6a3-4a6c-92a0-4a81395f4e55.png"
-                  alt="Testimonial from Robin Sharma: Time management is life management."
-                  width={1168}
-                  height={400}
+                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
+                  alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
+                  width={800}
+                  height={320}
                   className="w-full h-auto"
                 />
               </div>
