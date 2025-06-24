@@ -35,20 +35,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="gallery" className="w-full bg-background py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto mt-12 max-w-5xl">
-               <div className="overflow-hidden rounded-xl shadow-md">
-                <Image
-                  src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
-                  alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
-                  width={1200}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          </div>
+        <section id="banner" className="w-full">
+          <Image
+            src="https://storage.googleapis.com/studioprod-521a2.appspot.com/image-7667a48d-6e06-444e-a619-a1d26bb4e8fd.png"
+            alt="A quote by Lao Tzu: &quot;Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'&quot;"
+            width={1920}
+            height={500}
+            className="w-full h-auto object-cover"
+          />
         </section>
         
         <section id="features" className="w-full bg-card py-16 text-center md:py-24">
