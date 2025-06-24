@@ -38,8 +38,9 @@ export function TodoApp() {
     if (isClient) {
       try {
         const storedTasks = localStorage.getItem('tasks');
-        if (storedTasks) {
-          setTasks(JSON.parse(storedTasks));
+        const parsedTasks = storedTasks ? JSON.parse(storedTasks) : null;
+        if (parsedTasks && parsedTasks.length > 0) {
+          setTasks(parsedTasks);
         } else {
           setTasks(initialTasks);
         }
