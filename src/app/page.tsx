@@ -57,6 +57,19 @@ export default function Home() {
           </div>
         </section>
         
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-card">
+          <div className="container mx-auto px-4 md:px-6">
+            <Image
+              alt="Task Management App Screenshot"
+              className="mx-auto aspect-[2/1] overflow-hidden rounded-xl object-cover object-center sm:w-full shadow-lg"
+              src="https://placehold.co/1200x600.png"
+              data-ai-hint="productivity dashboard"
+              width={1200}
+              height={600}
+            />
+          </div>
+        </section>
+
         <section id="features" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
