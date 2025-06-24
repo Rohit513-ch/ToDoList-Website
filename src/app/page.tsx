@@ -103,12 +103,12 @@ export default function Home() {
                   height={675}
                 />
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+              <div className="flex gap-4 w-full max-w-4xl overflow-x-auto pb-4">
                 {galleryImages.map((image, index) => (
                   <div
                     key={index}
                     onClick={() => setMainImage(image)}
-                    className={`cursor-pointer rounded-xl transition-all duration-200 ${mainImage.src === image.src ? 'ring-2 ring-primary ring-offset-2' : 'hover:opacity-80'}`}
+                    className={`cursor-pointer rounded-xl transition-all duration-200 flex-shrink-0 w-72 ${mainImage.src === image.src ? 'ring-2 ring-primary ring-offset-2' : 'hover:opacity-80'}`}
                   >
                     <Image
                       alt={image.alt}
