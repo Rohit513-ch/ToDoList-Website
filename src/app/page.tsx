@@ -1,6 +1,9 @@
 
+"use client";
+
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 import { CheckCircle, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,6 +12,30 @@ import { Footer } from "@/components/footer"
 import { TestimonialCard } from "@/components/testimonial-card"
 
 export default function Home() {
+  const galleryImages = [
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-2048x853.webp",
+      alt: "Task Management App Screenshot 1",
+      "data-ai-hint": "task management"
+    },
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/09/image-2-1536x639-7.webp",
+      alt: "Task Management App Screenshot 2",
+      "data-ai-hint": "app interface"
+    },
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/09/image-1-1536x639-1.webp",
+      alt: "Task Management App Screenshot 3",
+      "data-ai-hint": "task list"
+    },
+    {
+      src: "https://clockdiary.com/wp-content/uploads/2024/09/MicrosoftTeams-image-1-1024x427-1.webp",
+      alt: "Task Management App Screenshot 4",
+      "data-ai-hint": "feature showcase"
+    }
+  ];
+  const [mainImage, setMainImage] = useState(galleryImages[0]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -57,46 +84,48 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="w-full py-20 md:py-32 bg-card">
+        <section className="w-full py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <Image
-                alt="Task Management App Screenshot 1"
-                className="w-full h-auto rounded-xl shadow-lg"
-                src="https://clockdiary.com/wp-content/uploads/2024/08/MicrosoftTeams-image-2048x853.webp"
-                data-ai-hint="task management"
-                width={1200}
-                height={500}
-              />
-              <Image
-                alt="Task Management App Screenshot 2"
-                className="w-full h-auto rounded-xl shadow-lg"
-                src="https://clockdiary.com/wp-content/uploads/2024/09/image-2-1536x639-7.webp"
-                data-ai-hint="app interface"
-                width={1200}
-                height={500}
-              />
-              <Image
-                alt="Task Management App Screenshot 3"
-                className="w-full h-auto rounded-xl shadow-lg"
-                src="https://clockdiary.com/wp-content/uploads/2024/09/image-1-1536x639-1.webp"
-                data-ai-hint="task list"
-                width={1200}
-                height={500}
-              />
-              <Image
-                alt="Task Management App Screenshot 4"
-                className="w-full h-auto rounded-xl shadow-lg"
-                src="https://clockdiary.com/wp-content/uploads/2024/09/MicrosoftTeams-image-1-1024x427-1.webp"
-                data-ai-hint="feature showcase"
-                width={1200}
-                height={500}
-              />
+            <div className="space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">App Showcase</h2>
+              <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed">
+                Take a closer look at TaskZen&apos;s interface and features. Click a thumbnail to enlarge.
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-8">
+              <div className="w-full max-w-4xl">
+                <Image
+                  alt={mainImage.alt}
+                  className="w-full h-auto rounded-xl shadow-lg object-contain"
+                  src={mainImage.src}
+                  data-ai-hint={mainImage['data-ai-hint']}
+                  width={1200}
+                  height={675}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+                {galleryImages.map((image, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setMainImage(image)}
+                    className={`cursor-pointer rounded-xl transition-all duration-200 ${mainImage.src === image.src ? 'ring-2 ring-primary ring-offset-2' : 'hover:opacity-80'}`}
+                  >
+                    <Image
+                      alt={image.alt}
+                      className="w-full h-auto rounded-lg object-cover aspect-video"
+                      src={image.src}
+                      data-ai-hint={image['data-ai-hint']}
+                      width={300}
+                      height={169}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="features" className="w-full bg-background py-16 text-center md:py-24">
+        <section id="features" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -132,7 +161,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="w-full bg-card py-16 md:py-24">
+        <section id="how-it-works" className="w-full bg-background py-16 md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-6 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">How It Works</h2>
@@ -152,7 +181,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="testimonials" className="w-full bg-background py-16 text-center md:py-24">
+        <section id="testimonials" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -182,7 +211,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full bg-card py-16 text-center md:py-24">
+        <section id="about" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">About This Project</h2>
