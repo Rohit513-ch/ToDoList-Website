@@ -9,6 +9,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Search, Plus, Calendar as CalendarIcon, MoreHorizontal } from 'lucide-react';
 import { format } from "date-fns";
 import { useToast } from '@/hooks/use-toast';
@@ -27,6 +30,8 @@ export function TodoApp() {
   const [date, setDate] = useState<Date>(new Date(2025, 1, 21));
   const [searchQuery, setSearchQuery] = useState('');
   const [isClient, setIsClient] = useState(false);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [taskToEdit, setTaskToEdit] = useState<Task | null>(null);
   const { toast } = useToast();
 
 
@@ -71,6 +76,25 @@ export function TodoApp() {
 
   const handleDelete = (id: string) => {
     setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  const handleEditClick = (task: Task) => {
+    setTaskToEdit(task);
+    setIsEditDialogOpen(true);
+  };
+
+  const handleUpdateTask = (updatedTask: Task) => {
+    if (!updatedTask.title.trim()) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Task title cannot be empty.",
+      });
+      return;
+    }
+    setTasks(tasks.map(task => task.id === updatedTask.id ? updatedTask : task));
+    setIsEditDialogOpen(false);
+    setTaskToEdit(null);
   };
 
   const filteredTasks = tasks.filter(task =>
@@ -125,7 +149,7 @@ export function TodoApp() {
         <TabsContent value="active" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {activeTasks.map(task => (
-              <TaskCard key={task.id} task={task} onToggleComplete={handleToggleComplete} onDelete={handleDelete} />
+              <TaskCard key={task.id} task={task} onToggleComplete={handleToggleComplete} onDelete={handleDelete} onEdit={handleEditClick} />
             ))}
           </div>
             {activeTasks.length === 0 && <p className="text-center text-gray-500 mt-10">No active tasks found.</p>}
@@ -133,17 +157,26 @@ export function TodoApp() {
         <TabsContent value="completed" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {completedTasks.map(task => (
-              <TaskCard key={task.id} task={task} onToggleComplete={handleToggleComplete} onDelete={handleDelete} />
+              <TaskCard key={task.id} task={task} onToggleComplete={handleToggleComplete} onDelete={handleDelete} onEdit={handleEditClick} />
             ))}
           </div>
             {completedTasks.length === 0 && <p className="text-center text-gray-500 mt-10">No completed tasks found.</p>}
         </TabsContent>
       </Tabs>
+
+      {taskToEdit && (
+        <EditTaskDialog
+          isOpen={isEditDialogOpen}
+          setIsOpen={setIsEditDialogOpen}
+          task={taskToEdit}
+          onUpdateTask={handleUpdateTask}
+        />
+      )}
     </div>
   );
 }
 
-function TaskCard({ task, onToggleComplete, onDelete }: { task: Task; onToggleComplete: (id: string) => void; onDelete: (id: string) => void; }) {
+function TaskCard({ task, onToggleComplete, onDelete, onEdit }: { task: Task; onToggleComplete: (id: string) => void; onDelete: (id: string) => void; onEdit: (task: Task) => void; }) {
   return (
     <div className={`p-5 rounded-2xl shadow-sm ${task.color}`}>
       <div className="flex items-start justify-between">
@@ -165,7 +198,7 @@ function TaskCard({ task, onToggleComplete, onDelete }: { task: Task; onToggleCo
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>Edit</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => onEdit(task)}>Edit</DropdownMenuItem>
             <DropdownMenuItem onClick={() => onDelete(task.id)} className="text-red-500 focus:bg-red-50 focus:text-red-600">Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -177,5 +210,59 @@ function TaskCard({ task, onToggleComplete, onDelete }: { task: Task; onToggleCo
         {task.time}
       </p>
     </div>
+  );
+}
+
+function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; task: Task; onUpdateTask: (task: Task) => void; }) {
+  const [editedTitle, setEditedTitle] = useState(task.title);
+  const [editedDescription, setEditedDescription] = useState(task.description);
+
+  useEffect(() => {
+    setEditedTitle(task.title);
+    setEditedDescription(task.description);
+  }, [task]);
+
+  const handleSave = () => {
+    onUpdateTask({ ...task, title: editedTitle, description: editedDescription });
+  };
+  
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Edit Task</DialogTitle>
+          <DialogDescription>
+            Make changes to your task here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="title" className="text-right">
+              Title
+            </Label>
+            <Input
+              id="title"
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+              className="col-span-3"
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="description" className="text-right">
+              Description
+            </Label>
+            <Textarea
+              id="description"
+              value={editedDescription}
+              onChange={(e) => setEditedDescription(e.target.value)}
+              className="col-span-3"
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button onClick={handleSave}>Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
