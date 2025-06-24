@@ -34,19 +34,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <section className="w-full bg-background py-12 md:py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <Image
-              src="https://i.ibb.co/Rj5hB1N/image.png"
-              alt="TaskZen application screenshot"
-              data-ai-hint="app screenshot"
-              width={1349}
-              height={363}
-              className="mx-auto rounded-xl object-cover"
-            />
-          </div>
-        </section>
         
         <section id="features" className="w-full bg-card py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
