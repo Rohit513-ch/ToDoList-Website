@@ -62,7 +62,7 @@ export default function Home() {
             <Image
               alt="Task Management App Screenshot"
               className="mx-auto aspect-[2/1] overflow-hidden rounded-xl object-cover object-center sm:w-full shadow-lg"
-              src="https://i.ibb.co/5Mq0gND/Screenshot-2024-07-26-at-12-09-54-PM.png"
+              src="https://i.ibb.co/k2kS0Jg/Screenshot-2024-07-26-at-12-09-54-PM.png"
               data-ai-hint="task management"
               width={1200}
               height={600}
