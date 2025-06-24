@@ -38,8 +38,9 @@ export default function Home() {
         <section className="w-full bg-background py-12 md:py-16">
           <div className="container mx-auto px-4 md:px-6">
             <Image
-              src="https://storage.googleapis.com/aifirebase-1-1-prod.appspot.com/users%2Fclwkscw7v001s1r0158j61lmd%2Fprojects%2Fclz0x4pzn007n1r0155v71m6k%2Fdev%2Ffr-request-clz1f4q8h001r1q01375k7v9y-1719225792271.png"
-              alt="ClockDiary banner with a quote from Lao Tzu: Time is a created thing. To say 'I don't have time' is to say 'I don't want to.'"
+              src="https://placehold.co/828x315.png"
+              alt="App screenshot placeholder"
+              data-ai-hint="app screenshot"
               width={828}
               height={315}
               className="mx-auto rounded-xl object-cover"
