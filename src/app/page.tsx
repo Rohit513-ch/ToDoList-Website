@@ -117,7 +117,7 @@ export default function Home() {
                  </p>
               </div>
             </div>
-            <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-12 flex flex-col items-center gap-8">
               <TestimonialCard 
                 name="Sarah Johnson"
                 title="Freelance Writer"
