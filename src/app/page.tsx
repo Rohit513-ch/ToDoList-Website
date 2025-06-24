@@ -24,7 +24,7 @@ export default function Home() {
               </div>
               <div className="space-x-4">
                 <Button asChild size="lg">
-                  <Link href="/todo">
+                  <Link href="/login">
                     <Zap className="mr-2 h-5 w-5" /> Start Managing Tasks
                   </Link>
                 </Button>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         <section id="features" className="w-full bg-background py-16 text-center md:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
