@@ -123,18 +123,21 @@ export default function Home() {
                  </p>
               </div>
             </div>
-            <div className="mx-auto mt-12 grid grid-cols-3 gap-8">
+            <div className="mx-auto mt-12 grid max-w-full grid-cols-1 gap-8 md:grid-cols-3">
               <TestimonialCard 
                 name="Sarah Johnson"
                 title="Freelance Writer"
+                quote="TaskZen has completely transformed how I manage my deadlines. It's simple, intuitive, and beautiful."
               />
               <TestimonialCard 
                 name="Mike Chen"
                 title="Project Manager"
+                quote="The best to-do app I've ever used. It helps my team stay on track and keeps our projects moving forward."
               />
               <TestimonialCard 
                 name="Jessica Rodriguez"
                 title="Student"
+                quote="As a student, keeping track of assignments is a nightmare. TaskZen makes it easy and even a little fun!"
               />
             </div>
           </div>
