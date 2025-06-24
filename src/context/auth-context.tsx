@@ -67,7 +67,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       toast({
         variant: 'destructive',
         title: 'Configuration Error',
-        description: 'Firebase authentication is not configured.',
+        description: 'Firebase authentication is not configured. Please check your .env.local file.',
       });
       return;
     }
