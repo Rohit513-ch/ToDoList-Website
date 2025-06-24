@@ -123,7 +123,7 @@ export default function Home() {
                  </p>
               </div>
             </div>
-            <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start md:flex-wrap">
+            <div className="mx-auto mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               <TestimonialCard 
                 name="Sarah Johnson"
                 title="Freelance Writer"
