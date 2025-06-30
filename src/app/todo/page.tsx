@@ -38,9 +38,9 @@ export default function TodoPage() {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-[#F9FAFB] dark:bg-gray-900 font-sans">
+    <div className="flex min-h-screen font-sans">
       {/* Sidebar */}
-      <aside className="w-72 flex-shrink-0 border-r border-gray-700 bg-gradient-to-b from-gray-900 to-gray-800">
+      <aside className="w-72 flex-shrink-0 border-r border-gray-700 bg-gray-900">
         <div className="flex h-full flex-col">
           <div className="flex items-center h-20 px-6 border-b border-gray-700">
             <Link href="/" className="flex items-center gap-2">
@@ -93,7 +93,7 @@ export default function TodoPage() {
 
       {/* Main Content */}
       <div className="flex flex-1 flex-col">
-        <header className="flex h-20 items-center justify-between border-b border-gray-700 bg-gradient-to-b from-gray-900 to-gray-800 px-8">
+        <header className="flex h-20 items-center justify-between border-b border-gray-700 bg-gray-900 px-8">
           <h1 className="text-3xl font-bold text-gray-200">Todo List</h1>
           <div className="flex items-center gap-6">
             <Button suppressHydrationWarning variant="ghost" size="icon" className="relative text-gray-400 hover:bg-gray-700 hover:text-white">
@@ -136,8 +136,7 @@ export default function TodoPage() {
           </div>
         </header>
         <main
-          className="flex-1 p-8 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/5604765/pexels-photo-5604765.jpeg')" }}
+          className="flex-1 p-8 bg-white"
         >
           <TodoApp />
         </main>
