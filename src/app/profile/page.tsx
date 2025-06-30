@@ -105,7 +105,7 @@ export default function ProfilePage() {
                 </Avatar>
                 <div>
                   <h2 className="text-2xl font-bold text-white">{user ? `${user.firstName} ${user.lastName}` : 'User Name'}</h2>
-                  <p className="text-sm text-gray-400">@{user?.username}</p>
+                  <p className="text-sm text-gray-400">{user?.username}</p>
                 </div>
               </div>
             </aside>
