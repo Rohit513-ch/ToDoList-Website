@@ -99,18 +99,6 @@ export default function ProfilePage() {
                   <Label htmlFor="password">Password</Label>
                   <Input id="password" type="password" value="************" readOnly className="mt-1 bg-background/50 border-border/50 text-lg" />
                 </div>
-                <div>
-                  <Label className="flex items-center" htmlFor="2fa-label">
-                    Two-Factor Authentication
-                    <Info className="ml-1 h-3 w-3 text-muted-foreground" />
-                  </Label>
-                  <div className="flex items-center space-x-4 mt-2">
-                    <Switch id="2fa-app" defaultChecked />
-                    <Label htmlFor="2fa-app" className="text-muted-foreground">App</Label>
-                    <Switch id="2fa-email" />
-                    <Label htmlFor="2fa-email" className="text-muted-foreground">Email</Label>
-                  </div>
-                </div>
               </div>
             </section>
           </div>
