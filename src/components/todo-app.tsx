@@ -98,7 +98,7 @@ export function TodoApp() {
     setTaskToEdit(null);
   };
 
-  const handleAddTask = (newTaskData: Pick<Task, 'title' | 'description'>) => {
+  const handleAddTask = (newTaskData: Pick<Task, 'title' | 'description' | 'time'>) => {
     if (!newTaskData.title.trim()) {
       toast({
         variant: 'destructive',
@@ -114,7 +114,7 @@ export function TodoApp() {
       id: `${new Date().getTime()}`,
       title: newTaskData.title,
       description: newTaskData.description,
-      time: '10:30 AM - 12:00 PM', // Default time
+      time: newTaskData.time || '10:30 AM - 12:00 PM',
       completed: false,
       color: taskColors[Math.floor(Math.random() * taskColors.length)],
     };
@@ -249,18 +249,20 @@ function TaskCard({ task, onToggleComplete, onDelete, onEdit }: { task: Task; on
   );
 }
 
-function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; onAddTask: (task: Pick<Task, 'title' | 'description'>) => void; }) {
+function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; onAddTask: (task: Pick<Task, 'title' | 'description' | 'time'>) => void; }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [time, setTime] = useState('');
 
   const handleSubmit = () => {
-    onAddTask({ title, description });
+    onAddTask({ title, description, time });
   };
 
   useEffect(() => {
     if (!isOpen) {
       setTitle('');
       setDescription('');
+      setTime('');
     }
   }, [isOpen]);
 
@@ -298,6 +300,18 @@ function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setI
               placeholder="e.g., Finalize and submit quarterly report"
             />
           </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="add-time" className="text-right">
+              Time
+            </Label>
+            <Input
+              id="add-time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              className="col-span-3"
+              placeholder="e.g., 10:00 AM - 11:00 AM"
+            />
+          </div>
         </div>
         <DialogFooter>
           <Button onClick={handleSubmit}>Add Task</Button>
@@ -310,15 +324,17 @@ function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setI
 function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; task: Task; onUpdateTask: (task: Task) => void; }) {
   const [editedTitle, setEditedTitle] = useState(task.title);
   const [editedDescription, setEditedDescription] = useState(task.description);
+  const [editedTime, setEditedTime] = useState(task.time);
 
   const handleSave = () => {
-    onUpdateTask({ ...task, title: editedTitle, description: editedDescription });
+    onUpdateTask({ ...task, title: editedTitle, description: editedDescription, time: editedTime });
   };
   
   useEffect(() => {
     if (task) {
       setEditedTitle(task.title);
       setEditedDescription(task.description);
+      setEditedTime(task.time);
     }
   }, [task]);
 
@@ -351,6 +367,17 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
               id="description"
               value={editedDescription}
               onChange={(e) => setEditedDescription(e.target.value)}
+              className="col-span-3"
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="time" className="text-right">
+              Time
+            </Label>
+            <Input
+              id="time"
+              value={editedTime}
+              onChange={(e) => setEditedTime(e.target.value)}
               className="col-span-3"
             />
           </div>
