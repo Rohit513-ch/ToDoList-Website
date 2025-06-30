@@ -20,7 +20,7 @@ export function Header() {
           Home
         </Link>
         <Button asChild variant="secondary" size="sm">
-          <Link href="/todo" prefetch={false}>
+          <Link href="/login" prefetch={false}>
             To-Do App
           </Link>
         </Button>
