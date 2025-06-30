@@ -40,50 +40,50 @@ export default function TodoPage() {
   return (
     <div className="flex min-h-screen font-sans">
       {/* Sidebar */}
-      <aside className="w-72 flex-shrink-0 border-r border-gray-200 bg-white">
+      <aside className="w-72 flex-shrink-0 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div className="flex h-full flex-col">
-          <div className="flex items-center h-20 px-6 border-b border-gray-200">
+          <div className="flex items-center h-20 px-6 border-b border-gray-700">
             <Link href="/" className="flex items-center gap-2">
               <ListTodo className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-gray-900">TaskZen</span>
+              <span className="text-2xl font-bold text-white">TaskZen</span>
             </Link>
           </div>
           <nav className="flex-1 p-4 space-y-2">
             
-            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
               <LayoutGrid className="w-5 h-5 mr-3" /> Overview
             </Button>
             
             <div>
-              <Button suppressHydrationWarning variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                 <Users className="w-5 h-5 mr-3" /> Team Mates
                 <div className="ml-auto">
                   {teamMatesOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </Button>
               {teamMatesOpen && (
-                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-500">
-                  <p className="cursor-pointer hover:text-gray-900">Akash Singh</p>
-                  <p className="cursor-pointer hover:text-gray-900">Vaibhav Kumar</p>
-                  <p className="cursor-pointer hover:text-gray-900">Piyush Raj</p>
-                  <p className="cursor-pointer hover:text-gray-900">Nitesh Rajput</p>
+                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-400">
+                  <p className="cursor-pointer hover:text-white">Akash Singh</p>
+                  <p className="cursor-pointer hover:text-white">Vaibhav Kumar</p>
+                  <p className="cursor-pointer hover:text-white">Piyush Raj</p>
+                  <p className="cursor-pointer hover:text-white">Nitesh Rajput</p>
                 </div>
               )}
             </div>
 
             <div>
-              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-gray-100 text-gray-900 hover:bg-gray-100">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-gray-700 text-white hover:bg-gray-700">
                 <ListTodo className="w-5 h-5 mr-3" /> Todo List
                 <div className="ml-auto">
                   {todoListOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </Button>
               {todoListOpen && (
-                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-500">
-                  <p className="cursor-pointer hover:text-gray-900">Team Meeting</p>
-                  <p className="cursor-pointer hover:text-gray-900">Work on Branding</p>
-                  <p className="cursor-pointer hover:text-gray-900">Make a Report for client</p>
-                  <p className="cursor-pointer hover:text-gray-900">Create a planer</p>
+                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-400">
+                  <p className="cursor-pointer hover:text-white">Team Meeting</p>
+                  <p className="cursor-pointer hover:text-white">Work on Branding</p>
+                  <p className="cursor-pointer hover:text-white">Make a Report for client</p>
+                  <p className="cursor-pointer hover:text-white">Create a planer</p>
                 </div>
               )}
             </div>
