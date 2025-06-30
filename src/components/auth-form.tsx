@@ -101,25 +101,25 @@ export function AuthForm() {
 
   return (
     <Tabs defaultValue="login" className="w-full max-w-md">
-      <TabsList className="grid w-full grid-cols-2 bg-transparent p-0 rounded-none border-b">
+      <TabsList className="grid w-full grid-cols-2 bg-transparent p-0 rounded-none border-b border-white/20">
         <TabsTrigger
           value="login"
-          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary text-muted-foreground data-[state=active]:text-foreground"
+          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-white text-gray-400 data-[state=active]:text-white"
         >
           Login
         </TabsTrigger>
         <TabsTrigger
           value="signup"
-          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary text-muted-foreground data-[state=active]:text-foreground"
+          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-white text-gray-400 data-[state=active]:text-white"
         >
           Sign Up
         </TabsTrigger>
       </TabsList>
       <TabsContent value="login">
-        <Card className="border-0 shadow-lg">
+        <Card className="bg-transparent border-0 shadow-none">
           <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-white">Login</CardTitle>
+            <CardDescription className="text-gray-300">
               Enter your credentials to access your to-do list.
             </CardDescription>
           </CardHeader>
@@ -134,11 +134,12 @@ export function AuthForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="text-white">Email</FormLabel>
                       <FormControl>
                         <Input
                           suppressHydrationWarning
                           placeholder="m@example.com"
+                          className="bg-transparent border-white/30 text-white placeholder:text-gray-400"
                           {...field}
                         />
                       </FormControl>
@@ -151,12 +152,13 @@ export function AuthForm() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel className="text-white">Password</FormLabel>
                       <FormControl>
                         <Input
                           suppressHydrationWarning
                           type="password"
                           placeholder="••••••••"
+                          className="bg-transparent border-white/30 text-white placeholder:text-gray-400"
                           {...field}
                         />
                       </FormControl>
@@ -173,10 +175,10 @@ export function AuthForm() {
         </Card>
       </TabsContent>
       <TabsContent value="signup">
-        <Card className="border-0 shadow-lg">
+        <Card className="bg-transparent border-0 shadow-none">
           <CardHeader>
-            <CardTitle>Sign Up</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-white">Sign Up</CardTitle>
+            <CardDescription className="text-gray-300">
               Create an account to start managing your tasks.
             </CardDescription>
           </CardHeader>
@@ -192,9 +194,9 @@ export function AuthForm() {
                     name="firstName"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>First Name</FormLabel>
+                        <FormLabel className="text-white">First Name</FormLabel>
                         <FormControl>
-                          <Input suppressHydrationWarning placeholder="First Name" {...field} />
+                          <Input suppressHydrationWarning placeholder="First Name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -205,9 +207,9 @@ export function AuthForm() {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Last Name</FormLabel>
+                        <FormLabel className="text-white">Last Name</FormLabel>
                         <FormControl>
-                          <Input suppressHydrationWarning placeholder="Last name" {...field} />
+                          <Input suppressHydrationWarning placeholder="Last name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -219,9 +221,9 @@ export function AuthForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="text-white">Email</FormLabel>
                       <FormControl>
-                        <Input suppressHydrationWarning placeholder="m@example.com" {...field} />
+                        <Input suppressHydrationWarning placeholder="m@example.com" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -232,19 +234,20 @@ export function AuthForm() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel className="text-white">Password</FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Input
                             suppressHydrationWarning
                             type={passwordVisible ? "text" : "password"}
                             placeholder="Enter your password"
+                            className="bg-transparent border-white/30 text-white placeholder:text-gray-400"
                             {...field}
                           />
                           <button
                             type="button"
                             onClick={() => setPasswordVisible(!passwordVisible)}
-                            className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground"
+                            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400"
                           >
                             {passwordVisible ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                           </button>
@@ -266,7 +269,7 @@ export function AuthForm() {
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
-                        <FormLabel>
+                        <FormLabel className="text-white">
                           I agree to the{" "}
                           <Link href="#" className="text-primary hover:underline">
                             Terms & Conditions
@@ -281,23 +284,18 @@ export function AuthForm() {
                   {loading ? "Creating Account..." : "Create account"}
                 </Button>
 
-                <div className="relative">
-                  <div className="absolute inset-0 flex items-center">
-                    <span className="w-full border-t" />
-                  </div>
-                  <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-card px-2 text-muted-foreground">
-                      Or register with
-                    </span>
-                  </div>
+                <div className="flex items-center gap-4">
+                    <div className="flex-1 border-t border-white/20" />
+                    <span className="text-xs uppercase text-gray-400">Or register with</span>
+                    <div className="flex-1 border-t border-white/20" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <Button variant="outline" className="bg-card hover:bg-secondary text-card-foreground" type="button" disabled={loading}>
+                  <Button variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" type="button" disabled={loading}>
                      <GoogleSvgIcon className="mr-2 h-4 w-4" />
                      Google
                   </Button>
-                  <Button variant="outline" className="bg-card hover:bg-secondary text-card-foreground" type="button" disabled={loading}>
+                  <Button variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" type="button" disabled={loading}>
                      <AppleSvgIcon className="mr-2 h-4 w-4" />
                      Apple
                   </Button>
