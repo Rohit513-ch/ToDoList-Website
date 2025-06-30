@@ -89,6 +89,7 @@ export function AuthForm() {
       bio: 'Lover of all things tech and productivity. Finding the best ways to get things done.',
       joinedDate: new Date().toISOString(),
       avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
+      password: values.password,
     };
     localStorage.setItem('user', JSON.stringify(user));
 
@@ -110,6 +111,7 @@ export function AuthForm() {
       bio: `Welcome to my TaskZen profile!`,
       joinedDate: new Date().toISOString(),
       avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
+      password: values.password,
     };
     localStorage.setItem('user', JSON.stringify(user));
 

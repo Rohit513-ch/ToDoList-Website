@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Label } from '@/components/ui/label';
-import { ListTodo } from 'lucide-react';
+import { ListTodo, Eye, EyeOff } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
@@ -17,6 +17,7 @@ interface User {
   avatar: string;
   username: string;
   bio: string;
+  password?: string;
 }
 
 export default function ProfilePage() {
@@ -27,6 +28,8 @@ export default function ProfilePage() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [bio, setBio] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     // This code runs only on the client
@@ -38,6 +41,7 @@ export default function ProfilePage() {
         setUsername(parsedUser.username || '');
         setEmail(parsedUser.email || '');
         setBio(parsedUser.bio || '');
+        setPassword(parsedUser.password || '');
     }
   }, []);
 
@@ -55,6 +59,7 @@ export default function ProfilePage() {
         username,
         email,
         bio,
+        password,
     };
     localStorage.setItem('user', JSON.stringify(updatedUser));
     setUser(updatedUser);
@@ -126,7 +131,22 @@ export default function ProfilePage() {
                   </div>
                   <div>
                     <Label htmlFor="password" className="text-gray-400">Password</Label>
-                    <Input id="password" type="password" value="************" readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                    <div className="relative">
+                      <Input
+                        id="password"
+                        type={passwordVisible ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="bg-transparent border-white/30 mt-2 text-white pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setPasswordVisible(!passwordVisible)}
+                        className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400"
+                      >
+                        {passwordVisible ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                      </button>
+                    </div>
                   </div>
                   <div>
                     <Label htmlFor="bio" className="text-gray-400">Bio</Label>
