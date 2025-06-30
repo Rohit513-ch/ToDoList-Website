@@ -277,7 +277,7 @@ function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setI
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="add-title" className="text-right">
+            <Label htmlFor="add-title">
               Title
             </Label>
             <Input
@@ -289,7 +289,7 @@ function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setI
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="add-description" className="text-right">
+            <Label htmlFor="add-description">
               Description
             </Label>
             <Textarea
@@ -301,7 +301,7 @@ function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setI
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="add-time" className="text-right">
+            <Label htmlFor="add-time">
               Time
             </Label>
             <Input
@@ -349,7 +349,7 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="title" className="text-right">
+            <Label htmlFor="title">
               Title
             </Label>
             <Input
@@ -360,7 +360,7 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="description" className="text-right">
+            <Label htmlFor="description">
               Description
             </Label>
             <Textarea
@@ -371,7 +371,7 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="time" className="text-right">
+            <Label htmlFor="time">
               Time
             </Label>
             <Input
