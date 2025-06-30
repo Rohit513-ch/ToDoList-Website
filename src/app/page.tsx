@@ -199,7 +199,7 @@ export default function Home() {
             <div className="relative mt-20">
               <div
                 aria-hidden="true"
-                className="absolute inset-0 top-9 mx-auto hidden h-px w-2/3 border-t-2 border-dashed border-border md:block"
+                className="absolute inset-0 top-9 mx-auto hidden h-px w-2/3 border-t-2 border-dashed border-muted-foreground/60 md:block"
               />
               <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
                 <div className="relative flex flex-col items-center text-center">
