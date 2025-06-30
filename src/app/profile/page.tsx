@@ -89,12 +89,12 @@ export default function ProfilePage() {
       <div className="absolute inset-0 bg-black/70" />
       <div className="relative z-10">
         {/* Header */}
-        <header className="flex justify-between items-center p-4 border-b border-white/10">
+        <header className="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
           <Link href="/todo" className="flex items-center gap-2" prefetch={false}>
             <ListTodo className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-white">TaskZen</span>
+            <span className="text-xl font-bold text-gray-900">TaskZen</span>
           </Link>
-          <Button asChild variant="default" className="border border-white/30">
+          <Button asChild variant="default" className="border border-white/30 bg-blue-500 hover:bg-blue-600">
             <Link href="/login">Logout</Link>
           </Button>
         </header>
@@ -153,7 +153,7 @@ export default function ProfilePage() {
                     <Textarea id="bio" value={bio} onChange={(e) => setBio(e.target.value)} className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
                   </div>
                   <div className="flex justify-end pt-4">
-                    <Button onClick={handleSave} variant="default" className="border border-white/30">Save Changes</Button>
+                    <Button onClick={handleSave} variant="default" className="border border-white/30 bg-blue-500 hover:bg-blue-600">Save Changes</Button>
                   </div>
                 </div>
               </section>
