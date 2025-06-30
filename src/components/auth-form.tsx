@@ -29,12 +29,15 @@ import { Checkbox } from "@/components/ui/checkbox"
 import Link from "next/link"
 
 const GoogleSvgIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    role="img"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    {...props}
+  >
     <title>Google</title>
-    <path
-      d="M21.35 11.1h-9.17v2.73h6.51c-.55 2.18-2.6 3.75-5.34 3.75-3.23 0-5.85-2.62-5.85-5.85s2.62-5.85 5.85-5.85c1.55 0 2.93.63 3.93 1.6l2.22-2.22c-1.43-1.34-3.33-2.18-5.55-2.18-4.64 0-8.4 3.76-8.4 8.4s3.76 8.4 8.4 8.4c4.87 0 8.04-3.4 8.04-8.15 0-.58-.05-1.14-.14-1.68z"
-      fill="currentColor"
-    />
+    <path d="M12.48 10.92v2.76h5.25c-.24 1.56-1.32 3.6-4.08 3.6-2.4 0-4.56-1.92-4.56-4.32s2.16-4.32 4.56-4.32c1.2 0 2.28.48 3.12 1.32l2.04-2.04C16.8 6.24 14.64 5.28 12.48 5.28c-3.84 0-7.2 3.0-7.2 7.2s3.36 7.2 7.2 7.2c4.08 0 6.84-2.88 6.84-7.08 0-.48-.06-.84-.12-1.2h-6.72z" />
   </svg>
 )
 
@@ -299,11 +302,11 @@ export function AuthForm() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <Button variant="outline" type="button" disabled={loading}>
+                  <Button variant="outline" className="bg-card hover:bg-secondary text-card-foreground" type="button" disabled={loading}>
                      <GoogleSvgIcon className="mr-2 h-4 w-4" />
                      Google
                   </Button>
-                  <Button variant="outline" type="button" disabled={loading}>
+                  <Button variant="secondary" className="bg-accent hover:bg-accent/90 border-transparent text-accent-foreground" type="button" disabled={loading}>
                      <AppleSvgIcon className="mr-2 h-4 w-4" />
                      Apple
                   </Button>
