@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useId } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -93,7 +93,7 @@ export default function ProfilePage() {
                   <Input id="password" type="password" value="************" readOnly className="mt-1 bg-background/50 border-border/50 text-lg" />
                 </div>
                 <div>
-                  <Label className="flex items-center" htmlFor="2fa">
+                  <Label className="flex items-center" htmlFor="2fa-label">
                     Two-Factor Authentication
                     <Info className="ml-1 h-3 w-3 text-muted-foreground" />
                   </Label>
@@ -113,27 +113,35 @@ export default function ProfilePage() {
             <section>
               <h2 className="text-lg font-semibold text-muted-foreground mb-6">Permissions</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                <PermissionItem label="Access analytics" defaultChecked />
-                <PermissionItem label="Manage user roles" defaultChecked />
-                <PermissionItem label="View audit logs" defaultChecked />
-                <PermissionItem label="Manage billing" />
-                <PermissionItem label="Edit system settings" />
-                <PermissionItem label="Upgrade or downgrade plans" />
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="access-analytics" className="text-base">Access analytics</Label>
+                  <Switch id="access-analytics" defaultChecked />
+                </div>
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="manage-user-roles" className="text-base">Manage user roles</Label>
+                  <Switch id="manage-user-roles" defaultChecked />
+                </div>
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="view-audit-logs" className="text-base">View audit logs</Label>
+                  <Switch id="view-audit-logs" defaultChecked />
+                </div>
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="manage-billing" className="text-base">Manage billing</Label>
+                  <Switch id="manage-billing" />
+                </div>
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="edit-system-settings" className="text-base">Edit system settings</Label>
+                  <Switch id="edit-system-settings" />
+                </div>
+                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
+                  <Label htmlFor="upgrade-or-downgrade-plans" className="text-base">Upgrade or downgrade plans</Label>
+                  <Switch id="upgrade-or-downgrade-plans" />
+                </div>
               </div>
             </section>
           </div>
         </div>
       </main>
-    </div>
-  );
-}
-
-function PermissionItem({ label, defaultChecked = false }: { label: string; defaultChecked?: boolean }) {
-  const id = useId();
-  return (
-    <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-      <Label htmlFor={id} className="text-base">{label}</Label>
-      <Switch id={id} defaultChecked={defaultChecked} />
     </div>
   );
 }
