@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function LoginPage() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-background p-4">
-      <Link href="/" className="absolute top-6 right-6 flex items-center gap-2" prefetch={false}>
+      <Link href="/" className="absolute top-6 left-6 flex items-center gap-2" prefetch={false}>
         <ListTodo className="h-8 w-8 text-primary" />
         <span className="text-2xl font-bold text-foreground">TaskZen</span>
       </Link>
