@@ -30,6 +30,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     // This code runs only on the client
+    setIsClient(true);
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
         const parsedUser: User = JSON.parse(storedUser);
@@ -38,7 +39,6 @@ export default function ProfilePage() {
         setEmail(parsedUser.email || '');
         setBio(parsedUser.bio || '');
     }
-    setIsClient(true);
   }, []);
 
   const handleSave = () => {
@@ -104,8 +104,8 @@ export default function ProfilePage() {
                   <AvatarFallback>{user?.firstName?.[0]}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <Label className="text-sm text-gray-400">Job Title</Label>
-                  <p className="text-lg font-medium text-white">Head of Marketing</p>
+                  <h2 className="text-2xl font-bold text-white">{user ? `${user.firstName} ${user.lastName}` : 'User Name'}</h2>
+                  <p className="text-sm text-gray-400">@{user?.username}</p>
                 </div>
               </div>
             </aside>
