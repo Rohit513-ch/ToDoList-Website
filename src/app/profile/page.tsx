@@ -6,9 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Separator } from '@/components/ui/separator';
-import { Pencil, ListTodo, Info } from 'lucide-react';
+import { Pencil, ListTodo } from 'lucide-react';
 
 interface User {
   firstName: string;
@@ -74,33 +72,7 @@ export default function ProfilePage() {
 
           {/* Right Content */}
           <div className="lg:col-span-3 space-y-12">
-            {/* User Information */}
-            <section>
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h2 className="text-lg font-semibold text-muted-foreground">User information</h2>
-                  <p className="text-4xl font-bold mt-1">{user ? `${user.firstName} ${user.lastName}` : 'Loading...'}</p>
-                </div>
-                <Button variant="outline">
-                  <Pencil className="mr-2 h-4 w-4" />
-                  Edit Profile
-                </Button>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <p id="email" className="text-lg">{user?.email}</p>
-                </div>
-                <div>
-                  <Label htmlFor="username">Username</Label>
-                  <p id="username" className="text-lg">@{user?.email?.split('@')[0]}</p>
-                </div>
-                <div>
-                  <Label htmlFor="password">Password</Label>
-                  <Input id="password" type="password" value="************" readOnly className="mt-1 bg-background/50 border-border/50 text-lg" />
-                </div>
-              </div>
-            </section>
+            
           </div>
         </div>
       </main>
