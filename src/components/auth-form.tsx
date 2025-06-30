@@ -297,7 +297,7 @@ export function AuthForm() {
                      <GoogleSvgIcon className="mr-2 h-4 w-4" />
                      Google
                   </Button>
-                  <Button variant="outline" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent" type="button" disabled={loading}>
+                  <Button variant="outline" className="bg-card hover:bg-secondary text-card-foreground" type="button" disabled={loading}>
                      <AppleSvgIcon className="mr-2 h-4 w-4" />
                      Apple
                   </Button>
