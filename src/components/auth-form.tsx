@@ -74,12 +74,22 @@ export function AuthForm() {
 
   return (
     <Tabs defaultValue="login" className="w-full max-w-md">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="login">Login</TabsTrigger>
-        <TabsTrigger value="signup">Sign Up</TabsTrigger>
+      <TabsList className="grid w-full grid-cols-2 bg-transparent p-0 rounded-none border-b">
+        <TabsTrigger
+          value="login"
+          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary text-muted-foreground data-[state=active]:text-foreground"
+        >
+          Login
+        </TabsTrigger>
+        <TabsTrigger
+          value="signup"
+          className="rounded-none bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary text-muted-foreground data-[state=active]:text-foreground"
+        >
+          Sign Up
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="login">
-        <Card>
+        <Card className="border-0 shadow-lg">
           <CardHeader>
             <CardTitle>Login</CardTitle>
             <CardDescription>
@@ -136,7 +146,7 @@ export function AuthForm() {
         </Card>
       </TabsContent>
       <TabsContent value="signup">
-        <Card>
+        <Card className="border-0 shadow-lg">
           <CardHeader>
             <CardTitle>Sign Up</CardTitle>
             <CardDescription>
