@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useToast } from '@/hooks/use-toast';
+import type { Task } from '@/lib/types';
 
 interface User {
   firstName: string;
@@ -28,6 +29,7 @@ export default function TodoPage() {
   const [todoListOpen, setTodoListOpen] = useState(true);
   const [user, setUser] = useState<User | null>(null);
   const { toast } = useToast();
+  const [activeSidebarTasks, setActiveSidebarTasks] = useState<Task[]>([]);
   
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -35,6 +37,10 @@ export default function TodoPage() {
         setUser(JSON.parse(storedUser));
     }
   }, []);
+
+  const handleTasksChange = (tasks: Task[]) => {
+    setActiveSidebarTasks(tasks.filter(task => !task.completed));
+  };
 
   return (
     <div className="flex min-h-screen font-sans">
@@ -62,10 +68,15 @@ export default function TodoPage() {
               </Button>
               {todoListOpen && (
                 <div className="pl-12 pt-2 space-y-3 text-sm text-gray-400">
-                  <p className="cursor-pointer hover:text-white">Team Meeting</p>
-                  <p className="cursor-pointer hover:text-white">Work on Branding</p>
-                  <p className="cursor-pointer hover:text-white">Make a Report for client</p>
-                  <p className="cursor-pointer hover:text-white">Create a planer</p>
+                  {activeSidebarTasks.length > 0 ? (
+                    activeSidebarTasks.map(task => (
+                      <p key={task.id} className="cursor-pointer hover:text-white truncate" title={task.title}>
+                        {task.title}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="text-gray-500 italic">No active tasks</p>
+                  )}
                 </div>
               )}
             </div>
@@ -75,7 +86,7 @@ export default function TodoPage() {
 
       {/* Main Content */}
       <div className="flex flex-1 flex-col">
-        <header className="flex h-20 items-center justify-between border-b border-gray-200 bg-white px-8">
+        <header className="flex h-20 items-center justify-between border-b bg-white px-8">
           <h1 className="text-3xl font-bold text-gray-900">Todo List</h1>
           <div className="flex items-center gap-6">
             <Button suppressHydrationWarning variant="ghost" size="icon" className="relative text-gray-500 hover:bg-gray-100 hover:text-gray-900">
@@ -121,7 +132,7 @@ export default function TodoPage() {
           className="flex-1 p-8 bg-cover bg-center"
           style={{ backgroundImage: "url('https://images.pexels.com/photos/5604765/pexels-photo-5604765.jpeg')" }}
         >
-          <TodoApp />
+          <TodoApp onTasksChange={handleTasksChange} />
         </main>
       </div>
     </div>

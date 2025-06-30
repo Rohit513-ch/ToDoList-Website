@@ -25,7 +25,11 @@ const initialTasks: Task[] = [
   { id: '6', title: 'Review PRs', description: 'Review the pull requests from the team.', time: '02:00 PM - 03:00 PM', completed: true, color: 'bg-gray-100' },
 ];
 
-export function TodoApp() {
+interface TodoAppProps {
+  onTasksChange: (tasks: Task[]) => void;
+}
+
+export function TodoApp({ onTasksChange }: TodoAppProps) {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [date, setDate] = useState<Date>(new Date(2025, 1, 21));
   const [searchQuery, setSearchQuery] = useState('');
@@ -65,8 +69,9 @@ export function TodoApp() {
   useEffect(() => {
     if (isClient) {
       localStorage.setItem('tasks', JSON.stringify(tasks));
+      onTasksChange(tasks);
     }
-  }, [tasks, isClient]);
+  }, [tasks, isClient, onTasksChange]);
 
 
   const handleToggleComplete = (id: string) => {
