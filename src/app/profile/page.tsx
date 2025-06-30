@@ -113,39 +113,6 @@ export default function ProfilePage() {
                 </div>
               </div>
             </section>
-            
-            <Separator className="bg-border/20" />
-
-            {/* Permissions */}
-            <section>
-              <h2 className="text-lg font-semibold text-muted-foreground mb-6">Permissions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="access-analytics" className="text-base">Access analytics</Label>
-                  <Switch id="access-analytics" defaultChecked />
-                </div>
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="manage-user-roles" className="text-base">Manage user roles</Label>
-                  <Switch id="manage-user-roles" defaultChecked />
-                </div>
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="view-audit-logs" className="text-base">View audit logs</Label>
-                  <Switch id="view-audit-logs" defaultChecked />
-                </div>
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="manage-billing" className="text-base">Manage billing</Label>
-                  <Switch id="manage-billing" />
-                </div>
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="edit-system-settings" className="text-base">Edit system settings</Label>
-                  <Switch id="edit-system-settings" />
-                </div>
-                <div className="flex items-center justify-between p-3 bg-card/5 rounded-lg">
-                  <Label htmlFor="upgrade-or-downgrade-plans" className="text-base">Upgrade or downgrade plans</Label>
-                  <Switch id="upgrade-or-downgrade-plans" />
-                </div>
-              </div>
-            </section>
           </div>
         </div>
       </main>
