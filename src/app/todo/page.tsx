@@ -85,7 +85,7 @@ export default function TodoPage() {
             </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button suppressHydrationWarning variant="ghost" className="relative h-12 w-12 rounded-full">
+                <Button suppressHydrationWarning variant="ghost" className="relative h-12 w-12 rounded-full p-0">
                   <Avatar className="h-12 w-12">
                     <AvatarImage src="https://i.ibb.co/NbzvwCN/profile-pic.jpg" alt="User Avatar" data-ai-hint="profile picture" />
                     <AvatarFallback>U</AvatarFallback>
