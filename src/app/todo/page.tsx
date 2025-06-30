@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { TodoApp } from '@/components/todo-app';
-import { LayoutGrid, Users, ListTodo, Bell, ChevronDown, ChevronUp } from 'lucide-react';
+import { LayoutGrid, ListTodo, Bell, ChevronDown, ChevronUp } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -25,7 +25,6 @@ interface User {
 }
 
 export default function TodoPage() {
-  const [teamMatesOpen, setTeamMatesOpen] = useState(true);
   const [todoListOpen, setTodoListOpen] = useState(true);
   const [user, setUser] = useState<User | null>(null);
   const { toast } = useToast();
@@ -54,23 +53,6 @@ export default function TodoPage() {
               <LayoutGrid className="w-5 h-5 mr-3" /> Overview
             </Button>
             
-            <div>
-              <Button suppressHydrationWarning variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                <Users className="w-5 h-5 mr-3" /> Team Mates
-                <div className="ml-auto">
-                  {teamMatesOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </div>
-              </Button>
-              {teamMatesOpen && (
-                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-400">
-                  <p className="cursor-pointer hover:text-white">Akash Singh</p>
-                  <p className="cursor-pointer hover:text-white">Vaibhav Kumar</p>
-                  <p className="cursor-pointer hover:text-white">Piyush Raj</p>
-                  <p className="cursor-pointer hover:text-white">Nitesh Rajput</p>
-                </div>
-              )}
-            </div>
-
             <div>
               <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-gray-700 text-white hover:bg-gray-700">
                 <ListTodo className="w-5 h-5 mr-3" /> Todo List
