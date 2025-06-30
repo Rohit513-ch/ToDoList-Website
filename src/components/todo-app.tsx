@@ -31,6 +31,7 @@ export function TodoApp() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isClient, setIsClient] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState<Task | null>(null);
   const { toast } = useToast();
 
@@ -97,6 +98,35 @@ export function TodoApp() {
     setTaskToEdit(null);
   };
 
+  const handleAddTask = (newTaskData: Pick<Task, 'title' | 'description'>) => {
+    if (!newTaskData.title.trim()) {
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: 'Task title cannot be empty.',
+      });
+      return;
+    }
+
+    const taskColors = ['bg-blue-100', 'bg-purple-100', 'bg-yellow-100', 'bg-pink-100', 'bg-green-100'];
+
+    const newTask: Task = {
+      id: `${new Date().getTime()}`,
+      title: newTaskData.title,
+      description: newTaskData.description,
+      time: '10:30 AM - 12:00 PM', // Default time
+      completed: false,
+      color: taskColors[Math.floor(Math.random() * taskColors.length)],
+    };
+
+    setTasks([newTask, ...tasks]);
+    setIsAddDialogOpen(false);
+    toast({
+      title: 'Success',
+      description: 'New task added successfully.',
+    });
+  };
+
   const filteredTasks = tasks.filter(task =>
     task.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -135,9 +165,9 @@ export function TodoApp() {
           />
         </div>
 
-        <Button suppressHydrationWarning className="bg-blue-600 hover:bg-blue-700">
+        <Button suppressHydrationWarning className="bg-blue-600 hover:bg-blue-700" onClick={() => setIsAddDialogOpen(true)}>
           <Plus className="mr-2 h-5 w-5" />
-          Add New List
+          Add New Task
         </Button>
       </div>
 
@@ -163,6 +193,12 @@ export function TodoApp() {
             {completedTasks.length === 0 && <p className="text-center text-gray-500 mt-10">No completed tasks found.</p>}
         </TabsContent>
       </Tabs>
+
+      <AddTaskDialog
+        isOpen={isAddDialogOpen}
+        setIsOpen={setIsAddDialogOpen}
+        onAddTask={handleAddTask}
+      />
 
       {taskToEdit && (
         <EditTaskDialog
@@ -213,6 +249,64 @@ function TaskCard({ task, onToggleComplete, onDelete, onEdit }: { task: Task; on
   );
 }
 
+function AddTaskDialog({ isOpen, setIsOpen, onAddTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; onAddTask: (task: Pick<Task, 'title' | 'description'>) => void; }) {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+
+  const handleSubmit = () => {
+    onAddTask({ title, description });
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setTitle('');
+      setDescription('');
+    }
+  }, [isOpen]);
+
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Add New Task</DialogTitle>
+          <DialogDescription>
+            Fill in the details for your new task. Click add task when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="add-title" className="text-right">
+              Title
+            </Label>
+            <Input
+              id="add-title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="col-span-3"
+              placeholder="e.g., Finish report"
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="add-description" className="text-right">
+              Description
+            </Label>
+            <Textarea
+              id="add-description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="col-span-3"
+              placeholder="e.g., Finalize and submit quarterly report"
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button onClick={handleSubmit}>Add Task</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boolean; setIsOpen: (open: boolean) => void; task: Task; onUpdateTask: (task: Task) => void; }) {
   const [editedTitle, setEditedTitle] = useState(task.title);
   const [editedDescription, setEditedDescription] = useState(task.description);
@@ -221,6 +315,13 @@ function EditTaskDialog({ isOpen, setIsOpen, task, onUpdateTask }: { isOpen: boo
     onUpdateTask({ ...task, title: editedTitle, description: editedDescription });
   };
   
+  useEffect(() => {
+    if (task) {
+      setEditedTitle(task.title);
+      setEditedDescription(task.description);
+    }
+  }, [task]);
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[425px]">
