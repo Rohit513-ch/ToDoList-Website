@@ -19,6 +19,7 @@ interface User {
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     // This code runs only on the client
@@ -26,7 +27,13 @@ export default function ProfilePage() {
     if (storedUser) {
         setUser(JSON.parse(storedUser));
     }
+    setIsClient(true);
   }, []);
+
+  if (!isClient) {
+    // Return null or a loading skeleton on the server and initial client render
+    return null;
+  }
 
   return (
     <div className="bg-background text-foreground min-h-screen">
