@@ -29,23 +29,21 @@ import { Checkbox } from "@/components/ui/checkbox"
 import Link from "next/link"
 
 const GoogleSvgIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <title>Google</title>
-    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
+      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
+      <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
+      <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
+      <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.089,5.571l6.19,5.238C42.021,35.591,44,30.138,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
+    </svg>
 )
 
 const AppleSvgIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" {...props}>
-    <title>Apple</title>
-    <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/>
-    <path d="M10 2c1 .5 2 2 2 5"/>
-  </svg>
-);
-
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" {...props}>
+      <title>Apple</title>
+      <path d="M12.15,2.5a.55.55,0,0,0-.5.23c-1,1.14-2.5,2.83-2.5,4.84a4.89,4.89,0,0,1,1.82-1.1,4.44,4.44,0,0,1,2.5-.2,4.28,4.28,0,0,1,3.45,2.3c-.05,0-.1,0-.15,0a5.3,5.3,0,0,0-4-2.14A4.3,4.3,0,0,0,12.15,2.5Zm5.62,10.15c.13-.17.25-.33.38-.5a4.29,4.29,0,0,0,1-3.32,4.47,4.47,0,0,0-3.23-4.23,4.88,4.88,0,0,0-4.6,2.73,4.55,4.55,0,0,0-1.28,3.22c0,2.5,1.52,4.22,3.31,4.22a4.42,4.42,0,0,0,3.3-1.63C17.65,12.82,17.7,12.65,17.77,12.65Z"></path>
+      <path d="M14.28,21.49a4.87,4.87,0,0,1-2.28.51,4.54,4.54,0,0,1-2.73-1,4.87,4.87,0,0,1-2-3.21c-2-1.29-2.73-3.48-2.73-5.32a6.19,6.19,0,0,1,2.37-5,6.66,6.66,0,0,1,5.21-2.14,4.28,4.28,0,0,1,1.37.2,1,1,0,0,0,.7-.18,3.75,3.75,0,0,1,2.87-1.18,4.53,4.53,0,0,1,4.35,4.42c0,3.11-2.1,6.5-4.26,6.5a4.8,4.8,0,0,1-3.23-1.63c-.17,0-.34,0-.5,0a5,5,0,0,0-.48.05A4.29,4.29,0,0,0,14.28,21.49Z"></path>
+    </svg>
+  );
 
 const signupSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required." }),
@@ -81,7 +79,17 @@ export function AuthForm() {
   const onLoginSubmit = async (values: z.infer<typeof loginSchema>) => {
     setLoading(true)
     console.log("Logging in with:", values)
-    await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    
+    const user = {
+      email: values.email,
+      firstName: 'John',
+      lastName: 'Doe',
+      joinedDate: new Date().toISOString(),
+      avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+
     setLoading(false)
     toast({ title: "Login Successful", description: "Welcome back!" })
     router.push("/todo")
@@ -90,7 +98,17 @@ export function AuthForm() {
   const onSignupSubmit = async (values: z.infer<typeof signupSchema>) => {
     setLoading(true)
     console.log("Signing up with:", values)
-    await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    
+    const user = {
+      email: values.email,
+      firstName: values.firstName,
+      lastName: values.lastName,
+      joinedDate: new Date().toISOString(),
+      avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+
     setLoading(false)
     toast({
       title: "Account Created",
@@ -196,7 +214,7 @@ export function AuthForm() {
                       <FormItem className="flex-1">
                         <FormLabel className="text-white">First Name</FormLabel>
                         <FormControl>
-                          <Input suppressHydrationWarning placeholder="First Name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
+                          <Input placeholder="First Name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -209,7 +227,7 @@ export function AuthForm() {
                       <FormItem className="flex-1">
                         <FormLabel className="text-white">Last Name</FormLabel>
                         <FormControl>
-                          <Input suppressHydrationWarning placeholder="Last name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
+                          <Input placeholder="Last name" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -223,7 +241,7 @@ export function AuthForm() {
                     <FormItem>
                       <FormLabel className="text-white">Email</FormLabel>
                       <FormControl>
-                        <Input suppressHydrationWarning placeholder="m@example.com" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
+                        <Input placeholder="m@example.com" {...field} className="bg-transparent border-white/30 text-white placeholder:text-gray-400" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -238,7 +256,6 @@ export function AuthForm() {
                       <FormControl>
                         <div className="relative">
                           <Input
-                            suppressHydrationWarning
                             type={passwordVisible ? "text" : "password"}
                             placeholder="Enter your password"
                             className="bg-transparent border-white/30 text-white placeholder:text-gray-400"
@@ -266,6 +283,7 @@ export function AuthForm() {
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
+                          className="border-white/50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
@@ -280,7 +298,7 @@ export function AuthForm() {
                     </FormItem>
                   )}
                 />
-                <Button suppressHydrationWarning type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full" disabled={loading}>
                   {loading ? "Creating Account..." : "Create account"}
                 </Button>
 
@@ -291,12 +309,12 @@ export function AuthForm() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <Button variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" type="button" disabled={loading}>
-                     <GoogleSvgIcon className="mr-2 h-4 w-4" />
+                  <Button variant="outline" className="bg-card text-card-foreground border-border hover:bg-accent" type="button" disabled={loading}>
+                     <GoogleSvgIcon className="mr-2 h-5 w-5" />
                      Google
                   </Button>
-                  <Button variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" type="button" disabled={loading}>
-                     <AppleSvgIcon className="mr-2 h-4 w-4" />
+                  <Button variant="outline" className="bg-card text-card-foreground border-border hover:bg-accent" type="button" disabled={loading}>
+                     <AppleSvgIcon className="mr-2 h-5 w-5" />
                      Apple
                   </Button>
                 </div>
