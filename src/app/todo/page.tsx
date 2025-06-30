@@ -15,10 +15,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useToast } from '@/hooks/use-toast';
 
 export default function TodoPage() {
   const [teamMatesOpen, setTeamMatesOpen] = useState(true);
   const [todoListOpen, setTodoListOpen] = useState(true);
+  const { toast } = useToast();
   
   return (
     <div className="flex min-h-screen bg-[#F9FAFB] font-sans">
@@ -103,10 +105,10 @@ export default function TodoPage() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => toast({ title: "Navigating to Profile" })}>
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => toast({ title: "Navigating to Settings" })}>
                     Settings
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
