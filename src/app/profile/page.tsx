@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { ListTodo } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 
 interface User {
   firstName: string;
@@ -21,21 +22,53 @@ interface User {
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
   const [isClient, setIsClient] = useState(false);
+  const { toast } = useToast();
+
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [bio, setBio] = useState('');
 
   useEffect(() => {
     // This code runs only on the client
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-        setUser(JSON.parse(storedUser));
+        const parsedUser: User = JSON.parse(storedUser);
+        setUser(parsedUser);
+        setUsername(parsedUser.username || '');
+        setEmail(parsedUser.email || '');
+        setBio(parsedUser.bio || '');
     }
     setIsClient(true);
   }, []);
 
+  const handleSave = () => {
+    if (!user) {
+        toast({
+            variant: "destructive",
+            title: "Error",
+            description: "No user data found to save.",
+        });
+        return;
+    }
+    const updatedUser: User = {
+        ...user,
+        username,
+        email,
+        bio,
+    };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+    toast({
+        title: "Success",
+        description: "Your profile has been updated.",
+    });
+  };
+
   if (!isClient) {
     // Return a loading skeleton on the server and initial client render
     return (
-        <div 
-          className="relative text-white min-h-screen bg-cover bg-center" 
+        <div
+          className="relative text-white min-h-screen bg-cover bg-center"
           style={{ backgroundImage: "url('https://i.pinimg.com/originals/e1/91/98/e191983c273ade9296e36d4993883a31.jpg')" }}
         >
              <div className="absolute inset-0 bg-black/70" />
@@ -44,8 +77,8 @@ export default function ProfilePage() {
   }
 
   return (
-    <div 
-      className="relative text-white min-h-screen bg-cover bg-center" 
+    <div
+      className="relative text-white min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('https://i.pinimg.com/originals/e1/91/98/e191983c273ade9296e36d4993883a31.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/70" />
@@ -85,11 +118,11 @@ export default function ProfilePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="username" className="text-gray-400">Username</Label>
-                      <Input id="username" type="text" value={user?.username || ''} readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                      <Input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="bg-transparent border-white/30 mt-2 text-white" />
                     </div>
                     <div>
                       <Label htmlFor="email" className="text-gray-400">Email Address</Label>
-                      <Input id="email" type="email" value={user?.email || ''} readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                      <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-transparent border-white/30 mt-2 text-white" />
                     </div>
                   </div>
                   <div>
@@ -98,7 +131,10 @@ export default function ProfilePage() {
                   </div>
                   <div>
                     <Label htmlFor="bio" className="text-gray-400">Bio</Label>
-                    <Textarea id="bio" value={user?.bio || ''} readOnly className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
+                    <Textarea id="bio" value={bio} onChange={(e) => setBio(e.target.value)} className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
+                  </div>
+                  <div className="flex justify-end pt-4">
+                    <Button onClick={handleSave} variant="primary">Save Changes</Button>
                   </div>
                 </div>
               </section>
