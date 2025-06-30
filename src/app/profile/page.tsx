@@ -94,7 +94,7 @@ export default function ProfilePage() {
             <ListTodo className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold text-white">TaskZen</span>
           </Link>
-          <Button asChild variant="primary" className="border border-white/30">
+          <Button asChild variant="default" className="border border-white/30">
             <Link href="/login">Logout</Link>
           </Button>
         </header>
@@ -153,7 +153,7 @@ export default function ProfilePage() {
                     <Textarea id="bio" value={bio} onChange={(e) => setBio(e.target.value)} className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
                   </div>
                   <div className="flex justify-end pt-4">
-                    <Button onClick={handleSave} variant="primary" className="border border-white/30">Save Changes</Button>
+                    <Button onClick={handleSave} variant="default" className="border border-white/30">Save Changes</Button>
                   </div>
                 </div>
               </section>
