@@ -45,37 +45,37 @@ export default function TodoPage() {
   return (
     <div className="flex min-h-screen font-sans">
       {/* Sidebar */}
-      <aside className="w-72 flex-shrink-0 bg-white text-gray-800 border-r border-gray-200">
+      <aside className="w-72 flex-shrink-0 bg-gradient-to-b from-gray-900 to-gray-700 text-gray-300 border-r border-gray-700">
         <div className="flex h-full flex-col">
-          <div className="flex items-center h-20 px-6 border-b border-gray-200">
+          <div className="flex items-center h-20 px-6 border-b border-gray-700">
             <Link href="/" className="flex items-center gap-2">
               <ListTodo className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-gray-900">TaskZen</span>
+              <span className="text-2xl font-bold text-white">TaskZen</span>
             </Link>
           </div>
           <nav className="flex-1 p-4 space-y-2">
             
-            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">
               <LayoutGrid className="w-5 h-5 mr-3" /> Overview
             </Button>
             
             <div>
-              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-900 bg-gray-100 hover:bg-gray-200">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium text-white bg-gray-700 hover:bg-gray-600">
                 <ListTodo className="w-5 h-5 mr-3" /> Todo List
                 <div className="ml-auto">
                   {todoListOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </Button>
               {todoListOpen && (
-                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-500">
+                <div className="pl-12 pt-2 space-y-3 text-sm text-gray-400">
                   {activeSidebarTasks.length > 0 ? (
                     activeSidebarTasks.map(task => (
-                      <p key={task.id} className="cursor-pointer hover:text-gray-900 truncate" title={task.title}>
+                      <p key={task.id} className="cursor-pointer hover:text-white truncate" title={task.title}>
                         {task.title}
                       </p>
                     ))
                   ) : (
-                    <p className="text-gray-500 italic">No active tasks</p>
+                    <p className="text-gray-400 italic">No active tasks</p>
                   )}
                 </div>
               )}
