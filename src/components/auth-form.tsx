@@ -85,6 +85,8 @@ export function AuthForm() {
       email: values.email,
       firstName: 'John',
       lastName: 'Doe',
+      username: 'john_doe',
+      bio: 'Lover of all things tech and productivity. Finding the best ways to get things done.',
       joinedDate: new Date().toISOString(),
       avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
     };
@@ -104,6 +106,8 @@ export function AuthForm() {
       email: values.email,
       firstName: values.firstName,
       lastName: values.lastName,
+      username: `${values.firstName.toLowerCase()}_${values.lastName.toLowerCase()}`,
+      bio: `Welcome to my TaskZen profile!`,
       joinedDate: new Date().toISOString(),
       avatar: 'https://i.ibb.co/NbzvwCN/profile-pic.jpg',
     };

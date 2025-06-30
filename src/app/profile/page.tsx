@@ -6,12 +6,16 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Label } from '@/components/ui/label';
 import { ListTodo } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 interface User {
   firstName: string;
   lastName: string;
   email: string;
   avatar: string;
+  username: string;
+  bio: string;
 }
 
 export default function ProfilePage() {
@@ -52,7 +56,7 @@ export default function ProfilePage() {
             <ListTodo className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold text-white">TaskZen</span>
           </Link>
-          <Button asChild>
+          <Button asChild variant="primary">
             <Link href="/login">Logout</Link>
           </Button>
         </header>
@@ -74,8 +78,30 @@ export default function ProfilePage() {
             </aside>
 
             {/* Right Content */}
-            <div className="lg:col-span-3 space-y-12">
-              
+            <div className="lg:col-span-3 space-y-8">
+              <section className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-md shadow-lg p-6">
+                <h2 className="text-xl font-semibold text-white mb-6">User Information</h2>
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="username" className="text-gray-400">Username</Label>
+                      <Input id="username" type="text" value={user?.username || ''} readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                    </div>
+                    <div>
+                      <Label htmlFor="email" className="text-gray-400">Email Address</Label>
+                      <Input id="email" type="email" value={user?.email || ''} readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="password" className="text-gray-400">Password</Label>
+                    <Input id="password" type="password" value="************" readOnly className="bg-transparent border-white/30 mt-2 text-white" />
+                  </div>
+                  <div>
+                    <Label htmlFor="bio" className="text-gray-400">Bio</Label>
+                    <Textarea id="bio" value={user?.bio || ''} readOnly className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </main>
