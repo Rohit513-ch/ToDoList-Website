@@ -194,7 +194,7 @@ export function AuthForm() {
                       <FormItem className="flex-1">
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input suppressHydrationWarning placeholder="Fletcher" {...field} />
+                          <Input suppressHydrationWarning placeholder="First Name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
