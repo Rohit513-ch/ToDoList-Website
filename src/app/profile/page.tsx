@@ -30,7 +30,12 @@ export default function ProfilePage() {
   if (!isClient) {
     // Return a loading skeleton on the server and initial client render
     return (
-        <div className="bg-gray-900 text-white min-h-screen animate-pulse" />
+        <div 
+          className="relative text-white min-h-screen bg-cover bg-center" 
+          style={{ backgroundImage: "url('https://i.pinimg.com/originals/e1/91/98/e191983c273ade9296e36d4993883a31.jpg')" }}
+        >
+             <div className="absolute inset-0 bg-black/70" />
+        </div>
     );
   }
 
@@ -47,7 +52,7 @@ export default function ProfilePage() {
             <ListTodo className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold text-white">TaskZen</span>
           </Link>
-          <Button asChild variant="outline" className="bg-transparent border-white/50 hover:bg-white/10">
+          <Button asChild>
             <Link href="/login">Logout</Link>
           </Button>
         </header>
