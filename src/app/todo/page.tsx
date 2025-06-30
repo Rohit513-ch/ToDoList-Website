@@ -50,12 +50,12 @@ export default function TodoPage() {
           </div>
           <nav className="flex-1 p-4 space-y-2">
             
-            <Button variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <Button suppressHydrationWarning variant="ghost" className="w-full justify-start h-12 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
               <LayoutGrid className="w-5 h-5 mr-3" /> Overview
             </Button>
             
             <div>
-              <Button variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTeamMatesOpen(!teamMatesOpen)} className="w-full justify-start h-12 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
                 <Users className="w-5 h-5 mr-3" /> Team Mates
                 <div className="ml-auto">
                   {teamMatesOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -72,7 +72,7 @@ export default function TodoPage() {
             </div>
 
             <div>
-              <Button variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/50 dark:text-blue-300 dark:hover:bg-blue-900">
+              <Button suppressHydrationWarning variant="ghost" onClick={() => setTodoListOpen(!todoListOpen)} className="w-full justify-start h-12 text-base font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/50 dark:text-blue-300 dark:hover:bg-blue-900">
                 <ListTodo className="w-5 h-5 mr-3" /> Todo List
                 <div className="ml-auto">
                   {todoListOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -96,7 +96,7 @@ export default function TodoPage() {
         <header className="flex h-20 items-center justify-between border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 px-8">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">Todo List</h1>
           <div className="flex items-center gap-6">
-            <Button variant="ghost" size="icon" className="relative text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <Button suppressHydrationWarning variant="ghost" size="icon" className="relative text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
               <Bell className="h-6 w-6" />
               <span className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-blue-500 ring-2 ring-white" />
             </Button>
