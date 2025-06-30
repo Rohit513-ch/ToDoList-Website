@@ -135,7 +135,10 @@ export default function TodoPage() {
             </DropdownMenu>
           </div>
         </header>
-        <main className="flex-1 p-8 bg-background">
+        <main
+          className="flex-1 p-8 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/5604765/pexels-photo-5604765.jpeg')" }}
+        >
           <TodoApp />
         </main>
       </div>
