@@ -59,14 +59,6 @@ export default function ProfilePage() {
                 <Label className="text-sm text-muted-foreground">Job Title</Label>
                 <p className="text-lg font-medium">Head of Marketing</p>
               </div>
-              <div>
-                <Label className="text-sm text-muted-foreground">Access level</Label>
-                <div className="mt-1">
-                  <span className="inline-block px-4 py-1.5 border border-primary rounded-md text-primary font-semibold">
-                    Manager
-                  </span>
-                </div>
-              </div>
             </div>
           </aside>
 
