@@ -104,8 +104,7 @@ export default function ProfilePage() {
                   <AvatarFallback>{user?.firstName?.[0]}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h2 className="text-2xl font-bold text-white">{user ? `${user.firstName} ${user.lastName}` : 'User Name'}</h2>
-                  <p className="text-sm text-gray-400">{user?.username}</p>
+                  <h2 className="text-2xl font-bold text-white">{user?.username}</h2>
                 </div>
               </div>
             </aside>
