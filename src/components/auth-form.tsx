@@ -134,7 +134,7 @@ export function AuthForm() {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="login">
-        <Card className="bg-transparent border-0 shadow-none">
+        <Card className="rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md shadow-lg">
           <CardHeader>
             <CardTitle className="text-white">Login</CardTitle>
             <CardDescription className="text-gray-300">
@@ -193,7 +193,7 @@ export function AuthForm() {
         </Card>
       </TabsContent>
       <TabsContent value="signup">
-        <Card className="bg-transparent border-0 shadow-none">
+        <Card className="rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md shadow-lg">
           <CardHeader>
             <CardTitle className="text-white">Sign Up</CardTitle>
             <CardDescription className="text-gray-300">
