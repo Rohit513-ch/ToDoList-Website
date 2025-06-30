@@ -17,6 +17,7 @@ interface User {
   avatar: string;
   username: string;
   bio: string;
+  description: string;
   password?: string;
 }
 
@@ -28,6 +29,7 @@ export default function ProfilePage() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [bio, setBio] = useState('');
+  const [description, setDescription] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -41,6 +43,7 @@ export default function ProfilePage() {
         setUsername(parsedUser.username || '');
         setEmail(parsedUser.email || '');
         setBio(parsedUser.bio || '');
+        setDescription(parsedUser.description || '');
         setPassword(parsedUser.password || '');
     }
   }, []);
@@ -59,6 +62,7 @@ export default function ProfilePage() {
         username,
         email,
         bio,
+        description,
         password,
     };
     localStorage.setItem('user', JSON.stringify(updatedUser));
@@ -128,6 +132,10 @@ export default function ProfilePage() {
                       <Label htmlFor="email" className="text-gray-400">Email Address</Label>
                       <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-transparent border-white/30 mt-2 text-white" />
                     </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="description" className="text-gray-400">Description</Label>
+                    <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} className="bg-transparent border-white/30 mt-2 min-h-[100px] text-white" />
                   </div>
                   <div>
                     <Label htmlFor="password" className="text-gray-400">Password</Label>
