@@ -113,8 +113,8 @@ export default function TodoPage() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem onClick={() => toast({ title: "This is just a demo!" })}>
-                    Profile
+                  <DropdownMenuItem asChild>
+                    <Link href="/profile">Profile</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => toast({ title: "This is just a demo!" })}>
                     Settings
