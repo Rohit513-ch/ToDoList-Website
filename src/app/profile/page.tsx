@@ -74,7 +74,7 @@ export default function ProfilePage() {
     return (
         <div
           className="relative text-white min-h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('https://i.pinimg.com/originals/e1/91/98/e191983c273ade9296e36d4993883a31.jpg')" }}
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/18541769/pexels-photo-18541769.jpeg')" }}
         >
              <div className="absolute inset-0 bg-black/70" />
         </div>
@@ -84,7 +84,7 @@ export default function ProfilePage() {
   return (
     <div
       className="relative text-white min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('https://i.pinimg.com/originals/e1/91/98/e191983c273ade9296e36d4993883a31.jpg')" }}
+      style={{ backgroundImage: "url('https://images.pexels.com/photos/18541769/pexels-photo-18541769.jpeg')" }}
     >
       <div className="absolute inset-0 bg-black/70" />
       <div className="relative z-10">
